@@ -1,0 +1,2 @@
+--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections --signed_chars -I ..\USER\inc -I ..\USER\src -I ..\..\Libraries\drives\inc -I ..\..\Libraries\drives\src -I ..\..\Libraries\seekfree -I ..\..\Libraries\startup\CoreSupport -I ..\..\Libraries\startup -I ..\..\Libraries\startup\DeviceSupport -I ..\..\Libraries\startup\DeviceSupport\MDK-ARM -I ..\WD151 -D__UVISION_VERSION="522" -DSKEAZ128xxx4
+-o .\objects\ano_drv_mpu6050.o --omf_browse .\objects\ano_drv_mpu6050.crf --depend .\objects\ano_drv_mpu6050.d "..\WD151\ANO_Drv_MPU6050.c"

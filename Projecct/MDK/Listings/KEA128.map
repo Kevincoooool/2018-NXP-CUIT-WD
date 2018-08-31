@@ -1,0 +1,2290 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    startup_skeaz1284.o(RESET) refers to startup_skeaz1284.o(STACK) for __initial_sp
+    startup_skeaz1284.o(RESET) refers to startup_skeaz1284.o(.text) for Reset_Handler
+    startup_skeaz1284.o(RESET) refers to isr.o(i.IRQ_IRQHandler) for IRQ_IRQHandler
+    startup_skeaz1284.o(RESET) refers to isr.o(i.UART1_IRQHandler) for UART1_IRQHandler
+    startup_skeaz1284.o(RESET) refers to isr.o(i.PIT_CH0_IRQHandler) for PIT_CH0_IRQHandler
+    startup_skeaz1284.o(RESET) refers to isr.o(i.PIT_CH1_IRQHandler) for PIT_CH1_IRQHandler
+    startup_skeaz1284.o(RESET) refers to isr.o(i.KBI0_IRQHandler) for KBI0_IRQHandler
+    startup_skeaz1284.o(.text) refers to system_skeaz1284.o(i.Start) for Start
+    startup_skeaz1284.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    system_skeaz1284.o(i.Start) refers to system_skeaz1284.o(i.disable_wdog) for disable_wdog
+    common.o(i.get_clk) refers to memcpya.o(.text) for __aeabi_memcpy4
+    common.o(i.get_clk) refers to uidiv.o(.text) for __aeabi_uidivmod
+    common.o(i.get_clk) refers to common.o(.constdata) for .constdata
+    common.o(i.get_clk) refers to common.o(.data) for ics_clk_khz
+    kea128_adc.o(i.ad_ave) refers to kea128_adc.o(i.adc_once) for adc_once
+    kea128_adc.o(i.ad_ave) refers to uidiv.o(.text) for __aeabi_uidivmod
+    kea128_flash.o(i.FLASH_EraseSector) refers to kea128_flash.o(i.FlashCmdStart) for FlashCmdStart
+    kea128_flash.o(i.FLASH_Init) refers to uidiv.o(.text) for __aeabi_uidivmod
+    kea128_flash.o(i.FLASH_Init) refers to common.o(.data) for bus_clk_khz
+    kea128_flash.o(i.FLASH_WriteSector) refers to kea128_flash.o(i.FlashCmdStart) for FlashCmdStart
+    kea128_flash.o(i.FlashCmdStart) refers to kea128_flash.o(.data) for s_flash_command_run
+    kea128_ftm.o(i.ftm_count_clean) refers to kea128_ftm.o(.constdata) for FTMX
+    kea128_ftm.o(i.ftm_count_get) refers to kea128_ftm.o(.constdata) for FTMX
+    kea128_ftm.o(i.ftm_count_init) refers to kea128_ftm.o(i.ftm_count_mux) for ftm_count_mux
+    kea128_ftm.o(i.ftm_count_init) refers to kea128_ftm.o(.constdata) for FTMX
+    kea128_ftm.o(i.ftm_count_mux) refers to kea128_port.o(i.port_pull) for port_pull
+    kea128_ftm.o(i.ftm_pwm_duty) refers to uidiv.o(.text) for __aeabi_uidivmod
+    kea128_ftm.o(i.ftm_pwm_duty) refers to kea128_ftm.o(.data) for period
+    kea128_ftm.o(i.ftm_pwm_duty) refers to kea128_ftm.o(.constdata) for FTMX
+    kea128_ftm.o(i.ftm_pwm_freq) refers to uidiv.o(.text) for __aeabi_uidivmod
+    kea128_ftm.o(i.ftm_pwm_freq) refers to common.o(.data) for ftm_clk_khz
+    kea128_ftm.o(i.ftm_pwm_freq) refers to kea128_ftm.o(.data) for period
+    kea128_ftm.o(i.ftm_pwm_freq) refers to kea128_ftm.o(.constdata) for FTMX
+    kea128_ftm.o(i.ftm_pwm_init) refers to kea128_ftm.o(i.ftm_pwm_mux) for ftm_pwm_mux
+    kea128_ftm.o(i.ftm_pwm_init) refers to uidiv.o(.text) for __aeabi_uidivmod
+    kea128_ftm.o(i.ftm_pwm_init) refers to common.o(.data) for ftm_clk_khz
+    kea128_ftm.o(i.ftm_pwm_init) refers to kea128_ftm.o(.data) for period
+    kea128_ftm.o(i.ftm_pwm_init) refers to kea128_ftm.o(.constdata) for FTMX
+    kea128_ftm.o(i.ftm_pwm_mux) refers to kea128_ftm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    kea128_gpio.o(i.gpio_ddr) refers to kea128_gpio.o(.constdata) for GPIOX
+    kea128_gpio.o(i.gpio_get) refers to kea128_gpio.o(.constdata) for GPIOX
+    kea128_gpio.o(i.gpio_init) refers to kea128_gpio.o(.constdata) for GPIOX
+    kea128_gpio.o(i.gpio_set) refers to kea128_gpio.o(.constdata) for GPIOX
+    kea128_gpio.o(i.gpio_turn) refers to kea128_gpio.o(.constdata) for GPIOX
+    kea128_kbi.o(i.kbi_init) refers to kea128_port.o(i.port_pull) for port_pull
+    kea128_kbi.o(i.kbi_init) refers to kea128_kbi.o(.data) for kbi
+    kea128_uart.o(i.fputc) refers to kea128_uart.o(i.uart_putchar) for uart_putchar
+    kea128_uart.o(i.uart_getchar) refers to kea128_uart.o(.data) for uart
+    kea128_uart.o(i.uart_init) refers to kea128_uart.o(i.uart_mux) for uart_mux
+    kea128_uart.o(i.uart_init) refers to uidiv.o(.text) for __aeabi_uidivmod
+    kea128_uart.o(i.uart_init) refers to kea128_uart.o(.data) for uart
+    kea128_uart.o(i.uart_init) refers to common.o(.data) for bus_clk_khz
+    kea128_uart.o(i.uart_mux) refers to kea128_port.o(i.port_pull) for port_pull
+    kea128_uart.o(i.uart_putbuff) refers to kea128_uart.o(i.uart_putchar) for uart_putchar
+    kea128_uart.o(i.uart_putchar) refers to kea128_uart.o(.data) for uart
+    kea128_uart.o(i.uart_putstr) refers to kea128_uart.o(i.uart_putchar) for uart_putchar
+    kea128_uart.o(i.uart_rx_irq_dis) refers to kea128_uart.o(i.NVIC_DisableIRQ) for NVIC_DisableIRQ
+    kea128_uart.o(i.uart_rx_irq_dis) refers to kea128_uart.o(.data) for uart
+    kea128_uart.o(i.uart_rx_irq_en) refers to kea128_uart.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    kea128_uart.o(i.uart_rx_irq_en) refers to kea128_uart.o(.data) for uart
+    kea128_uart.o(i.uart_txc_irq_dis) refers to kea128_uart.o(i.NVIC_DisableIRQ) for NVIC_DisableIRQ
+    kea128_uart.o(i.uart_txc_irq_dis) refers to kea128_uart.o(.data) for uart
+    kea128_uart.o(i.uart_txc_irq_en) refers to kea128_uart.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    kea128_uart.o(i.uart_txc_irq_en) refers to kea128_uart.o(.data) for uart
+    kea128_systick.o(i.systick_delay_ms) refers to kea128_systick.o(i.systick_delay) for systick_delay
+    kea128_systick.o(i.systick_delay_ms) refers to common.o(.data) for core_clk_khz
+    kea128_i2c.o(i.i2c_Wait) refers to my_i2c.o(i.IIC_init) for IIC_init
+    kea128_i2c.o(i.i2c_Wait) refers to my_i2c.o(i.IIC_stop) for IIC_stop
+    kea128_i2c.o(i.i2c_Wait) refers to kea128_i2c.o(.data) for I2CN
+    kea128_i2c.o(i.i2c_init) refers to memcpya.o(.text) for __aeabi_memcpy4
+    kea128_i2c.o(i.i2c_init) refers to uidiv.o(.text) for __aeabi_uidivmod
+    kea128_i2c.o(i.i2c_init) refers to kea128_i2c.o(.constdata) for .constdata
+    kea128_i2c.o(i.i2c_init) refers to common.o(.data) for bus_clk_khz
+    kea128_i2c.o(i.i2c_init) refers to kea128_i2c.o(.data) for I2CN
+    kea128_i2c.o(i.i2c_read_reg) refers to kea128_i2c.o(i.i2c_Wait) for i2c_Wait
+    kea128_i2c.o(i.i2c_read_reg) refers to kea128_i2c.o(i.i2c_delay) for i2c_delay
+    kea128_i2c.o(i.i2c_read_reg) refers to kea128_i2c.o(.data) for I2CN
+    kea128_i2c.o(i.i2c_read_reg_bytes) refers to kea128_i2c.o(i.i2c_Wait) for i2c_Wait
+    kea128_i2c.o(i.i2c_read_reg_bytes) refers to kea128_i2c.o(i.i2c_delay) for i2c_delay
+    kea128_i2c.o(i.i2c_read_reg_bytes) refers to kea128_i2c.o(.data) for I2CN
+    kea128_i2c.o(i.i2c_write_reg) refers to kea128_i2c.o(i.i2c_Wait) for i2c_Wait
+    kea128_i2c.o(i.i2c_write_reg) refers to kea128_i2c.o(i.i2c_delay) for i2c_delay
+    kea128_i2c.o(i.i2c_write_reg) refers to kea128_i2c.o(.data) for I2CN
+    kea128_spi.o(i.spi_init) refers to memcpya.o(.text) for __aeabi_memcpy4
+    kea128_spi.o(i.spi_init) refers to uidiv.o(.text) for __aeabi_uidivmod
+    kea128_spi.o(i.spi_init) refers to kea128_spi.o(.constdata) for .constdata
+    kea128_spi.o(i.spi_init) refers to common.o(.data) for bus_clk_khz
+    kea128_spi.o(i.spi_init) refers to kea128_spi.o(.data) for SPIN
+    kea128_spi.o(i.spi_mosi) refers to kea128_spi.o(.data) for SPIN
+    kea128_spi.o(i.spi_mosi_cmd) refers to kea128_spi.o(i.spi_mosi) for spi_mosi
+    seekfree_18tft.o(i.LCD_WriteData_16Bit) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_18tft.o(i.LCD_WriteData_16Bit) refers to kea128_spi.o(i.spi_mosi) for spi_mosi
+    seekfree_18tft.o(i.Lcd_SetRegion) refers to seekfree_18tft.o(i.Lcd_WriteIndex) for Lcd_WriteIndex
+    seekfree_18tft.o(i.Lcd_SetRegion) refers to seekfree_18tft.o(i.Lcd_WriteData) for Lcd_WriteData
+    seekfree_18tft.o(i.Lcd_WriteData) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_18tft.o(i.Lcd_WriteData) refers to kea128_spi.o(i.spi_mosi) for spi_mosi
+    seekfree_18tft.o(i.Lcd_WriteIndex) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_18tft.o(i.Lcd_WriteIndex) refers to kea128_spi.o(i.spi_mosi) for spi_mosi
+    seekfree_18tft.o(i.dsp_single_colour) refers to seekfree_18tft.o(i.Lcd_SetRegion) for Lcd_SetRegion
+    seekfree_18tft.o(i.dsp_single_colour) refers to seekfree_18tft.o(i.LCD_WriteData_16Bit) for LCD_WriteData_16Bit
+    seekfree_18tft.o(i.lcd_init) refers to kea128_spi.o(i.spi_init) for spi_init
+    seekfree_18tft.o(i.lcd_init) refers to kea128_gpio.o(i.gpio_init) for gpio_init
+    seekfree_18tft.o(i.lcd_init) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_18tft.o(i.lcd_init) refers to seekfree_18tft.o(i.tft_delay) for tft_delay
+    seekfree_18tft.o(i.lcd_init) refers to seekfree_18tft.o(i.Lcd_WriteIndex) for Lcd_WriteIndex
+    seekfree_18tft.o(i.lcd_init) refers to seekfree_18tft.o(i.Lcd_WriteData) for Lcd_WriteData
+    seekfree_18tft.o(i.lcd_init) refers to seekfree_18tft.o(i.dsp_single_colour) for dsp_single_colour
+    seekfree_18tft.o(i.lcd_showchar) refers to seekfree_18tft.o(i.Lcd_SetRegion) for Lcd_SetRegion
+    seekfree_18tft.o(i.lcd_showchar) refers to seekfree_18tft.o(i.LCD_WriteData_16Bit) for LCD_WriteData_16Bit
+    seekfree_18tft.o(i.lcd_showchar) refers to font.o(.constdata) for tft_ascii
+    seekfree_18tft.o(i.lcd_showint16) refers to seekfree_18tft.o(i.lcd_showchar) for lcd_showchar
+    seekfree_18tft.o(i.lcd_showint16) refers to idiv.o(.text) for __aeabi_idivmod
+    seekfree_18tft.o(i.lcd_showint8) refers to seekfree_18tft.o(i.lcd_showchar) for lcd_showchar
+    seekfree_18tft.o(i.lcd_showint8) refers to idiv.o(.text) for __aeabi_idivmod
+    seekfree_18tft.o(i.lcd_showstr) refers to seekfree_18tft.o(i.lcd_showchar) for lcd_showchar
+    seekfree_18tft.o(i.lcd_showuint16) refers to idiv.o(.text) for __aeabi_idivmod
+    seekfree_18tft.o(i.lcd_showuint16) refers to seekfree_18tft.o(i.lcd_showchar) for lcd_showchar
+    seekfree_18tft.o(i.lcd_showuint8) refers to idiv.o(.text) for __aeabi_idivmod
+    seekfree_18tft.o(i.lcd_showuint8) refers to seekfree_18tft.o(i.lcd_showchar) for lcd_showchar
+    seekfree_18tft.o(i.showimage) refers to seekfree_18tft.o(i.dsp_single_colour) for dsp_single_colour
+    seekfree_18tft.o(i.showimage) refers to seekfree_18tft.o(i.Lcd_SetRegion) for Lcd_SetRegion
+    seekfree_18tft.o(i.showimage) refers to seekfree_18tft.o(i.LCD_WriteData_16Bit) for LCD_WriteData_16Bit
+    seekfree_fun.o(i.limit) refers to ffltui.o(.text) for __aeabi_ui2f
+    seekfree_fun.o(i.limit) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    seekfree_fun.o(i.limit) refers to fflti.o(.text) for __aeabi_i2f
+    seekfree_fun.o(i.limit) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    seekfree_nrf24l01.o(i.NRF_Dev_Init) refers to kea128_gpio.o(i.gpio_init) for gpio_init
+    seekfree_nrf24l01.o(i.NRF_Dev_Init) refers to kea128_port.o(i.port_pull) for port_pull
+    seekfree_nrf24l01.o(i.NRF_Dev_Init) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_nrf24l01.o(i.NRF_Dev_Init) refers to seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Byte) for NRF_SPI_W_Reg_Byte
+    seekfree_nrf24l01.o(i.NRF_Dev_Init) refers to seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Burst) for NRF_SPI_W_Reg_Burst
+    seekfree_nrf24l01.o(i.NRF_Dev_Init) refers to seekfree_nrf24l01.o(i.NRF_SPI_W_Cmd_Byte) for NRF_SPI_W_Cmd_Byte
+    seekfree_nrf24l01.o(i.NRF_Dev_Init) refers to seekfree_nrf24l01.o(.data) for NRF_RF_Addr
+    seekfree_nrf24l01.o(i.NRF_Rece_Packet) refers to kea128_gpio.o(i.gpio_get) for gpio_get
+    seekfree_nrf24l01.o(i.NRF_Rece_Packet) refers to seekfree_nrf24l01.o(i.NRF_SPI_R_Reg_Byte) for NRF_SPI_R_Reg_Byte
+    seekfree_nrf24l01.o(i.NRF_Rece_Packet) refers to seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Byte) for NRF_SPI_W_Reg_Byte
+    seekfree_nrf24l01.o(i.NRF_Rece_Packet) refers to seekfree_nrf24l01.o(i.NRF_SPI_R_Reg_Burst) for NRF_SPI_R_Reg_Burst
+    seekfree_nrf24l01.o(i.NRF_SPI_R_Reg_Burst) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_nrf24l01.o(i.NRF_SPI_R_Reg_Burst) refers to seekfree_nrf24l01.o(i.NRF_SPI_WR_Byte) for NRF_SPI_WR_Byte
+    seekfree_nrf24l01.o(i.NRF_SPI_R_Reg_Byte) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_nrf24l01.o(i.NRF_SPI_R_Reg_Byte) refers to seekfree_nrf24l01.o(i.NRF_SPI_WR_Byte) for NRF_SPI_WR_Byte
+    seekfree_nrf24l01.o(i.NRF_SPI_WR_Byte) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_nrf24l01.o(i.NRF_SPI_WR_Byte) refers to kea128_gpio.o(i.gpio_get) for gpio_get
+    seekfree_nrf24l01.o(i.NRF_SPI_W_Cmd_Byte) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_nrf24l01.o(i.NRF_SPI_W_Cmd_Byte) refers to seekfree_nrf24l01.o(i.NRF_SPI_WR_Byte) for NRF_SPI_WR_Byte
+    seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Burst) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Burst) refers to seekfree_nrf24l01.o(i.NRF_SPI_WR_Byte) for NRF_SPI_WR_Byte
+    seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Byte) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Byte) refers to seekfree_nrf24l01.o(i.NRF_SPI_WR_Byte) for NRF_SPI_WR_Byte
+    seekfree_nrf24l01.o(i.NRF_Send_Packet) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_nrf24l01.o(i.NRF_Send_Packet) refers to seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Byte) for NRF_SPI_W_Reg_Byte
+    seekfree_nrf24l01.o(i.NRF_Send_Packet) refers to seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Burst) for NRF_SPI_W_Reg_Burst
+    seekfree_nrf24l01.o(i.NRF_Send_Packet) refers to seekfree_nrf24l01.o(i.NRF_SPI_R_Reg_Byte) for NRF_SPI_R_Reg_Byte
+    seekfree_nrf24l01.o(i.NRF_Send_Packet) refers to seekfree_nrf24l01.o(.data) for NRF_RF_Addr
+    seekfree_oled.o(i.OLED_ClrPixel) refers to seekfree_oled.o(i.OLED_Set_Pos) for OLED_Set_Pos
+    seekfree_oled.o(i.OLED_ClrPixel) refers to seekfree_oled.o(i.OLED_WrCmd) for OLED_WrCmd
+    seekfree_oled.o(i.OLED_ClrPixel) refers to seekfree_oled.o(i.OLED_WrDat) for OLED_WrDat
+    seekfree_oled.o(i.OLED_Fill) refers to seekfree_oled.o(i.OLED_WrCmd) for OLED_WrCmd
+    seekfree_oled.o(i.OLED_Fill) refers to seekfree_oled.o(i.OLED_WrDat) for OLED_WrDat
+    seekfree_oled.o(i.OLED_HEXACSII) refers to idiv.o(.text) for __aeabi_idivmod
+    seekfree_oled.o(i.OLED_Init) refers to kea128_gpio.o(i.gpio_init) for gpio_init
+    seekfree_oled.o(i.OLED_Init) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_oled.o(i.OLED_Init) refers to seekfree_oled.o(i.OLED_DLY_ms) for OLED_DLY_ms
+    seekfree_oled.o(i.OLED_Init) refers to seekfree_oled.o(i.OLED_WrCmd) for OLED_WrCmd
+    seekfree_oled.o(i.OLED_Init) refers to seekfree_oled.o(i.OLED_Fill) for OLED_Fill
+    seekfree_oled.o(i.OLED_Init) refers to seekfree_oled.o(i.OLED_Set_Pos) for OLED_Set_Pos
+    seekfree_oled.o(i.OLED_P6x8Str) refers to seekfree_oled.o(i.OLED_Set_Pos) for OLED_Set_Pos
+    seekfree_oled.o(i.OLED_P6x8Str) refers to seekfree_oled.o(i.OLED_WrDat) for OLED_WrDat
+    seekfree_oled.o(i.OLED_P6x8Str) refers to seekfree_oled.o(.constdata) for F6x8
+    seekfree_oled.o(i.OLED_P8x16Str) refers to seekfree_oled.o(i.OLED_Set_Pos) for OLED_Set_Pos
+    seekfree_oled.o(i.OLED_P8x16Str) refers to seekfree_oled.o(i.OLED_WrDat) for OLED_WrDat
+    seekfree_oled.o(i.OLED_P8x16Str) refers to seekfree_oled.o(.constdata) for F8X16
+    seekfree_oled.o(i.OLED_Print_Num) refers to seekfree_oled.o(i.OLED_HEXACSII) for OLED_HEXACSII
+    seekfree_oled.o(i.OLED_Print_Num) refers to seekfree_oled.o(i.OLED_P6x8Str) for OLED_P6x8Str
+    seekfree_oled.o(i.OLED_Print_Num1) refers to seekfree_oled.o(i.OLED_P6x8Str) for OLED_P6x8Str
+    seekfree_oled.o(i.OLED_Print_Num1) refers to seekfree_oled.o(i.OLED_HEXACSII) for OLED_HEXACSII
+    seekfree_oled.o(i.OLED_PutPixel) refers to seekfree_oled.o(i.OLED_Set_Pos) for OLED_Set_Pos
+    seekfree_oled.o(i.OLED_PutPixel) refers to seekfree_oled.o(i.OLED_WrCmd) for OLED_WrCmd
+    seekfree_oled.o(i.OLED_PutPixel) refers to seekfree_oled.o(i.OLED_WrDat) for OLED_WrDat
+    seekfree_oled.o(i.OLED_Set_Pos) refers to seekfree_oled.o(i.OLED_WrCmd) for OLED_WrCmd
+    seekfree_oled.o(i.OLED_Wr6Dat) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_oled.o(i.OLED_WrCmd) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_oled.o(i.OLED_WrDat) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_oled.o(i.dis_bmp) refers to seekfree_oled.o(i.OLED_Set_Pos) for OLED_Set_Pos
+    seekfree_oled.o(i.dis_bmp) refers to seekfree_oled.o(i.OLED_WrDat) for OLED_WrDat
+    isr.o(i.PIT_CH1_IRQHandler) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    isr.o(i.PIT_CH1_IRQHandler) refers to control.o(i.Start_Control) for Start_Control
+    isr.o(i.PIT_CH1_IRQHandler) refers to loop.o(.data) for sysTickUptime
+    isr.o(i.PIT_CH1_IRQHandler) refers to control.o(.data) for Run_OK
+    isr.o(i.PIT_CH1_IRQHandler) refers to isr.o(.data) for Time
+    isr.o(i.UART1_IRQHandler) refers to ano_data_transfer.o(i.ANO_DT_Data_Receive_Prepare) for ANO_DT_Data_Receive_Prepare
+    main.o(i.main) refers to common.o(i.get_clk) for get_clk
+    main.o(i.main) refers to system.o(i.System_Init) for System_Init
+    main.o(i.main) refers to loop.o(i.Loop_Run) for Loop_Run
+    system.o(i.System_Init) refers to led.o(i.led_init) for led_init
+    system.o(i.System_Init) refers to led.o(i.button_init) for button_init
+    system.o(i.System_Init) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    system.o(i.System_Init) refers to seekfree_oled.o(i.OLED_Init) for OLED_Init
+    system.o(i.System_Init) refers to kea128_flash.o(i.FLASH_Init) for FLASH_Init
+    system.o(i.System_Init) refers to pid.o(i.PID_Parameter_Init) for PID_Parameter_Init
+    system.o(i.System_Init) refers to adrc.o(i.ADRC_Init) for ADRC_Init
+    system.o(i.System_Init) refers to kea128_ftm.o(i.ftm_pwm_init) for ftm_pwm_init
+    system.o(i.System_Init) refers to kea128_uart.o(i.uart_init) for uart_init
+    system.o(i.System_Init) refers to kea128_uart.o(i.uart_rx_irq_en) for uart_rx_irq_en
+    system.o(i.System_Init) refers to mpu6050.o(i.MPU6050_Init) for MPU6050_Init
+    system.o(i.System_Init) refers to kea128_systick.o(i.systick_delay_ms) for systick_delay_ms
+    system.o(i.System_Init) refers to kea128_ftm.o(i.ftm_count_init) for ftm_count_init
+    system.o(i.System_Init) refers to kea128_gpio.o(i.gpio_init) for gpio_init
+    system.o(i.System_Init) refers to kea128_port.o(i.port_pull) for port_pull
+    system.o(i.System_Init) refers to kea128_pit.o(i.pit_init) for pit_init
+    system.o(i.System_Init) refers to control.o(i.Speed_Control) for Speed_Control
+    system.o(i.System_Init) refers to kea128_adc.o(i.adc_init) for adc_init
+    system.o(i.System_Init) refers to kea128_gpio.o(i.gpio_get) for gpio_get
+    system.o(i.System_Init) refers to seekfree_oled.o(i.OLED_P6x8Str) for OLED_P6x8Str
+    system.o(i.System_Init) refers to seekfree_oled.o(i.OLED_Print_Num1) for OLED_Print_Num1
+    system.o(i.System_Init) refers to show.o(i.Ring_Set) for Ring_Set
+    system.o(i.System_Init) refers to kea128_flash.o(i.FLASH_EraseSector) for FLASH_EraseSector
+    system.o(i.System_Init) refers to kea128_flash.o(i.FLASH_WriteSector) for FLASH_WriteSector
+    system.o(i.System_Init) refers to pid.o(.bss) for Speed_PID
+    system.o(i.System_Init) refers to control.o(.data) for Radius
+    system.o(i.System_Init) refers to adrc.o(.bss) for ADRC_SPEED_MIN_Controller
+    system.o(i.System_Init) refers to common.o(.data) for bus_clk_khz
+    system.o(i.System_Init) refers to em.o(.data) for Run_state
+    system.o(i.System_Init) refers to system.o(.data) for sector1
+    loop.o(i.Duty_100ms) refers to kea128_gpio.o(i.gpio_turn) for gpio_turn
+    loop.o(i.Duty_100ms) refers to show.o(i.OLED_Draw_UI) for OLED_Draw_UI
+    loop.o(i.Duty_100ms) refers to show.o(i.Check_BottonPress) for Check_BottonPress
+    loop.o(i.Duty_100ms) refers to control.o(i.BAT_CHECK) for BAT_CHECK
+    loop.o(i.Duty_100ms) refers to show.o(.data) for OLED_Refresh
+    loop.o(i.Duty_2ms) refers to em.o(i.L_AD_Sample) for L_AD_Sample
+    loop.o(i.Duty_2ms) refers to mpu6050.o(i.MPU6050_GetData) for MPU6050_GetData
+    loop.o(i.Duty_2ms) refers to mpu6050.o(i.Data_steepest) for Data_steepest
+    loop.o(i.Duty_2ms) refers to control.o(.data) for ACC
+    loop.o(i.Duty_40ms) refers to ffixi.o(.text) for __aeabi_f2iz
+    loop.o(i.Duty_40ms) refers to pid.o(i.PID_Realize) for PID_Realize
+    loop.o(i.Duty_40ms) refers to fflti.o(.text) for __aeabi_i2f
+    loop.o(i.Duty_40ms) refers to fadd.o(.text) for __aeabi_fadd
+    loop.o(i.Duty_40ms) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    loop.o(i.Duty_40ms) refers to control.o(i.range_protect) for range_protect
+    loop.o(i.Duty_40ms) refers to adrc.o(i.Fhan_ADRC) for Fhan_ADRC
+    loop.o(i.Duty_40ms) refers to adrc.o(.bss) for ADRC_SPEED_MIN_Controller
+    loop.o(i.Duty_40ms) refers to control.o(.data) for Speed_Set
+    loop.o(i.Duty_40ms) refers to pid.o(.data) for Speed
+    loop.o(i.Duty_40ms) refers to pid.o(.bss) for Speed_PID
+    loop.o(i.Duty_40ms) refers to control.o(.bss) for Target_Angle
+    loop.o(i.Duty_40ms) refers to search.o(.data) for Middle_Err
+    loop.o(i.Duty_40ms) refers to loop.o(.data) for sysTickUptime
+    loop.o(i.Duty_4ms) refers to fmul.o(.text) for __aeabi_fmul
+    loop.o(i.Duty_4ms) refers to ffixi.o(.text) for __aeabi_f2iz
+    loop.o(i.Duty_4ms) refers to pid.o(i.PID_Increase) for PID_Increase
+    loop.o(i.Duty_4ms) refers to control.o(i.range_protect) for range_protect
+    loop.o(i.Duty_4ms) refers to pid.o(i.PID_Realize) for PID_Realize
+    loop.o(i.Duty_4ms) refers to dflti.o(.text) for __aeabi_i2d
+    loop.o(i.Duty_4ms) refers to dmul.o(.text) for __aeabi_dmul
+    loop.o(i.Duty_4ms) refers to dadd.o(.text) for __aeabi_dadd
+    loop.o(i.Duty_4ms) refers to dfixi.o(.text) for __aeabi_d2iz
+    loop.o(i.Duty_4ms) refers to control.o(i.MOTOR_Control) for MOTOR_Control
+    loop.o(i.Duty_4ms) refers to control.o(.bss) for GYRO_Real
+    loop.o(i.Duty_4ms) refers to pid.o(.data) for Ang_gyro
+    loop.o(i.Duty_4ms) refers to pid.o(.bss) for Ang_gyro_PID
+    loop.o(i.Duty_4ms) refers to control.o(.data) for Theory_Duty
+    loop.o(i.Duty_4ms) refers to loop.o(.data) for sysTickUptime
+    loop.o(i.Duty_8ms) refers to mpu6050.o(i.IMU_update) for IMU_update
+    loop.o(i.Duty_8ms) refers to control.o(i.Speed_Measure) for Speed_Measure
+    loop.o(i.Duty_8ms) refers to fflti.o(.text) for __aeabi_i2f
+    loop.o(i.Duty_8ms) refers to fdiv.o(.text) for __aeabi_fdiv
+    loop.o(i.Duty_8ms) refers to fadd.o(.text) for __aeabi_fadd
+    loop.o(i.Duty_8ms) refers to control.o(i.Speed_Calculate) for Speed_Calculate
+    loop.o(i.Duty_8ms) refers to pid.o(i.PlacePID_Control) for PlacePID_Control
+    loop.o(i.Duty_8ms) refers to search.o(i.Road_Find) for Road_Find
+    loop.o(i.Duty_8ms) refers to ffixi.o(.text) for __aeabi_f2iz
+    loop.o(i.Duty_8ms) refers to fmul.o(.text) for __aeabi_fmul
+    loop.o(i.Duty_8ms) refers to pid.o(i.PID_Realize) for PID_Realize
+    loop.o(i.Duty_8ms) refers to control.o(i.range_protect) for range_protect
+    loop.o(i.Duty_8ms) refers to mpu6050.o(.data) for imu_data
+    loop.o(i.Duty_8ms) refers to control.o(.bss) for sensor
+    loop.o(i.Duty_8ms) refers to control.o(.data) for Speed_Now
+    loop.o(i.Duty_8ms) refers to pid.o(.data) for Turn
+    loop.o(i.Duty_8ms) refers to search.o(.data) for Middle_Err
+    loop.o(i.Duty_8ms) refers to pid.o(.bss) for Turn_PID
+    loop.o(i.Duty_8ms) refers to adrc.o(.bss) for ADRC_SPEED_Controller
+    loop.o(i.Loop_Run) refers to loop.o(.data) for sysTickUptime
+    loop.o(.data) refers to loop.o(i.Duty_100ms) for Duty_100ms
+    loop.o(.data) refers to loop.o(i.Duty_40ms) for Duty_40ms
+    loop.o(.data) refers to loop.o(i.Duty_8ms) for Duty_8ms
+    loop.o(.data) refers to loop.o(i.Duty_4ms) for Duty_4ms
+    loop.o(.data) refers to loop.o(i.Duty_2ms) for Duty_2ms
+    control.o(i.BAT_CHECK) refers to kea128_adc.o(i.adc_once) for adc_once
+    control.o(i.BAT_CHECK) refers to dfltui.o(.text) for __aeabi_ui2d
+    control.o(i.BAT_CHECK) refers to dmul.o(.text) for __aeabi_dmul
+    control.o(i.BAT_CHECK) refers to ddiv.o(.text) for __aeabi_ddiv
+    control.o(i.BAT_CHECK) refers to d2f.o(.text) for __aeabi_d2f
+    control.o(i.BAT_CHECK) refers to control.o(.data) for battery
+    control.o(i.Balance_Init) refers to control.o(.bss) for Attitude_Angle
+    control.o(i.Balance_Init) refers to control.o(.data) for Speed_Min
+    control.o(i.Balance_Init) refers to em.o(.data) for Ring_state
+    control.o(i.MOTOR_Control) refers to control.o(i.range_protect) for range_protect
+    control.o(i.MOTOR_Control) refers to kea128_ftm.o(i.ftm_pwm_duty) for ftm_pwm_duty
+    control.o(i.Speed_Calculate) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    control.o(i.Speed_Calculate) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    control.o(i.Speed_Calculate) refers to adrc.o(.bss) for ADRC_SPEED_MIN_Controller
+    control.o(i.Speed_Calculate) refers to control.o(.data) for Fres
+    control.o(i.Speed_Control) refers to kea128_ftm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    control.o(i.Speed_Control) refers to main.o(.data) for Mode_Set
+    control.o(i.Speed_Control) refers to control.o(.data) for Speed_Set
+    control.o(i.Speed_Measure) refers to kea128_ftm.o(i.ftm_count_get) for ftm_count_get
+    control.o(i.Speed_Measure) refers to kea128_ftm.o(i.ftm_count_clean) for ftm_count_clean
+    control.o(i.Speed_Measure) refers to kea128_gpio.o(i.gpio_get) for gpio_get
+    control.o(i.Speed_Measure) refers to dflti.o(.text) for __aeabi_i2d
+    control.o(i.Speed_Measure) refers to dmul.o(.text) for __aeabi_dmul
+    control.o(i.Speed_Measure) refers to dadd.o(.text) for __aeabi_dadd
+    control.o(i.Speed_Measure) refers to dfixi.o(.text) for __aeabi_d2iz
+    control.o(i.Speed_Measure) refers to fflti.o(.text) for __aeabi_i2f
+    control.o(i.Speed_Measure) refers to adrc.o(i.Fhan_ADRC) for Fhan_ADRC
+    control.o(i.Speed_Measure) refers to ffixi.o(.text) for __aeabi_f2iz
+    control.o(i.Speed_Measure) refers to control.o(i.range_protect) for range_protect
+    control.o(i.Speed_Measure) refers to control.o(.data) for temp1
+    control.o(i.Speed_Measure) refers to adrc.o(.bss) for ADRC_SPEED_MIN_Controller
+    control.o(i.Start_Control) refers to kea128_gpio.o(i.gpio_get) for gpio_get
+    control.o(i.Start_Control) refers to control.o(.data) for Run_OK
+    control.o(i.Start_Control) refers to em.o(.data) for Run_state
+    control.o(i.WCZ_Data_Calc) refers to ffixi.o(.text) for __aeabi_f2iz
+    control.o(i.WCZ_Data_Calc) refers to idiv.o(.text) for __aeabi_idivmod
+    control.o(i.WCZ_Data_Calc) refers to fmul.o(.text) for __aeabi_fmul
+    control.o(i.WCZ_Data_Calc) refers to fadd.o(.text) for __aeabi_frsub
+    control.o(i.WCZ_Data_Calc) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    control.o(i.WCZ_Data_Calc) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    control.o(i.WCZ_Data_Calc) refers to fflti.o(.text) for __aeabi_i2f
+    control.o(i.WCZ_Data_Calc) refers to mymath.o(i.my_deadzone) for my_deadzone
+    control.o(i.WCZ_Data_Calc) refers to ffltui.o(.text) for __aeabi_ui2f
+    control.o(i.WCZ_Data_Calc) refers to filter.o(i.fix_inte_filter) for fix_inte_filter
+    control.o(i.WCZ_Data_Calc) refers to control.o(.data) for Speed_Now
+    control.o(i.WCZ_Data_Calc) refers to mpu6050.o(.data) for imu_data
+    control.o(i.WCZ_Data_Calc) refers to control.o(.bss) for wcz_spe_fus
+    pid.o(i.PID_Increase) refers to fflti.o(.text) for __aeabi_i2f
+    pid.o(i.PID_Increase) refers to fmul.o(.text) for __aeabi_fmul
+    pid.o(i.PID_Increase) refers to fadd.o(.text) for __aeabi_fadd
+    pid.o(i.PID_Increase) refers to ffixi.o(.text) for __aeabi_f2iz
+    pid.o(i.PID_Realize) refers to fflti.o(.text) for __aeabi_i2f
+    pid.o(i.PID_Realize) refers to fmul.o(.text) for __aeabi_fmul
+    pid.o(i.PID_Realize) refers to fadd.o(.text) for __aeabi_fadd
+    pid.o(i.PID_Realize) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    pid.o(i.PID_Realize) refers to ffixi.o(.text) for __aeabi_f2iz
+    pid.o(i.PlacePID_Control) refers to fadd.o(.text) for __aeabi_fsub
+    pid.o(i.PlacePID_Control) refers to f2d.o(.text) for __aeabi_f2d
+    pid.o(i.PlacePID_Control) refers to dmul.o(.text) for __aeabi_dmul
+    pid.o(i.PlacePID_Control) refers to dadd.o(.text) for __aeabi_dadd
+    pid.o(i.PlacePID_Control) refers to d2f.o(.text) for __aeabi_d2f
+    pid.o(i.PlacePID_Control) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    pid.o(i.PlacePID_Control) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    pid.o(i.PlacePID_Control) refers to fmul.o(.text) for __aeabi_fmul
+    pid.o(i.PlacePID_Control) refers to ddiv.o(.text) for __aeabi_ddiv
+    pid.o(i.PlacePID_Control) refers to dflti.o(.text) for __aeabi_i2d
+    pid.o(i.PlacePID_Control) refers to dfixi.o(.text) for __aeabi_d2iz
+    pid.o(i.PlacePID_Control) refers to ffixi.o(.text) for __aeabi_f2iz
+    pid.o(i.PlacePID_Control) refers to control.o(i.range_protect) for range_protect
+    em.o(i.EM_ADC) refers to kea128_adc.o(i.adc_once) for adc_once
+    em.o(i.EM_ADC) refers to idiv.o(.text) for __aeabi_idivmod
+    em.o(i.EM_ADC) refers to control.o(i.range_protect) for range_protect
+    em.o(i.EM_ADC) refers to fflti.o(.text) for __aeabi_i2f
+    em.o(i.EM_ADC) refers to fmul.o(.text) for __aeabi_fmul
+    em.o(i.EM_ADC) refers to fdiv.o(.text) for __aeabi_fdiv
+    em.o(i.EM_ADC) refers to ffixi.o(.text) for __aeabi_f2iz
+    em.o(i.EM_ADC) refers to em.o(.bss) for filter_buf_L
+    em.o(i.EM_ADC) refers to em.o(.data) for left_adc
+    em.o(i.EM_ADC) refers to control.o(.data) for Run_Flag
+    em.o(i.EM_ADC) refers to search.o(.data) for Middle_Err
+    em.o(i.L_AD_Sample) refers to kea128_adc.o(i.adc_once) for adc_once
+    em.o(i.L_AD_Sample) refers to control.o(i.range_protect) for range_protect
+    em.o(i.L_AD_Sample) refers to em.o(i.Run_Control) for Run_Control
+    em.o(i.L_AD_Sample) refers to em.o(.data) for left_adc
+    em.o(i.Ring_Control) refers to kea128_ftm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    em.o(i.Ring_Control) refers to fflti.o(.text) for __aeabi_i2f
+    em.o(i.Ring_Control) refers to fmul.o(.text) for __aeabi_fmul
+    em.o(i.Ring_Control) refers to fdiv.o(.text) for __aeabi_fdiv
+    em.o(i.Ring_Control) refers to fadd.o(.text) for __aeabi_fsub
+    em.o(i.Ring_Control) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    em.o(i.Ring_Control) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    em.o(i.Ring_Control) refers to f2d.o(.text) for __aeabi_f2d
+    em.o(i.Ring_Control) refers to dmul.o(.text) for __aeabi_dmul
+    em.o(i.Ring_Control) refers to dadd.o(.text) for __aeabi_dadd
+    em.o(i.Ring_Control) refers to d2f.o(.text) for __aeabi_d2f
+    em.o(i.Ring_Control) refers to em.o(.data) for Ring_state
+    em.o(i.Ring_Control) refers to search.o(.data) for Middle_Err
+    em.o(i.Ring_Control) refers to control.o(.data) for Distance
+    em.o(i.Ring_Control) refers to mpu6050.o(.data) for imu_data
+    em.o(i.Ring_Control) refers to control.o(.bss) for GYRO_Real
+    em.o(i.Ring_Stable) refers to kea128_ftm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    em.o(i.Ring_Stable) refers to fflti.o(.text) for __aeabi_i2f
+    em.o(i.Ring_Stable) refers to fmul.o(.text) for __aeabi_fmul
+    em.o(i.Ring_Stable) refers to fdiv.o(.text) for __aeabi_fdiv
+    em.o(i.Ring_Stable) refers to ffltui.o(.text) for __aeabi_ui2f
+    em.o(i.Ring_Stable) refers to fadd.o(.text) for __aeabi_fsub
+    em.o(i.Ring_Stable) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    em.o(i.Ring_Stable) refers to em.o(.data) for Ring_state
+    em.o(i.Ring_Stable) refers to search.o(.data) for Middle_Err
+    em.o(i.Ring_Stable) refers to control.o(.data) for Distance
+    em.o(i.Ring_Stable) refers to mpu6050.o(.data) for imu_data
+    em.o(i.Ring_Stable) refers to control.o(.bss) for GYRO_Real
+    em.o(i.Ring_Stable) refers to dflti.o(.text) for __aeabi_i2d
+    em.o(i.Ring_Stable) refers to ddiv.o(.text) for __aeabi_ddiv
+    em.o(i.Ring_Stable) refers to dmul.o(.text) for __aeabi_dmul
+    em.o(i.Ring_Stable) refers to f2d.o(.text) for __aeabi_f2d
+    em.o(i.Ring_Stable) refers to d2f.o(.text) for __aeabi_d2f
+    em.o(i.Ring_Stable) refers to ffixi.o(.text) for __aeabi_f2iz
+    em.o(i.Ring_Stable) refers to control.o(i.range_protect) for range_protect
+    em.o(i.Run_Control) refers to kea128_ftm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    em.o(i.Run_Control) refers to fflti.o(.text) for __aeabi_i2f
+    em.o(i.Run_Control) refers to fmul.o(.text) for __aeabi_fmul
+    em.o(i.Run_Control) refers to fdiv.o(.text) for __aeabi_fdiv
+    em.o(i.Run_Control) refers to fadd.o(.text) for __aeabi_fsub
+    em.o(i.Run_Control) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    em.o(i.Run_Control) refers to em.o(i.Ring_Stable) for Ring_Stable
+    em.o(i.Run_Control) refers to em.o(.data) for Run_state
+    em.o(i.Run_Control) refers to control.o(.data) for Run_Flag
+    em.o(i.Run_Control) refers to search.o(.data) for Middle_Err
+    search.o(i.Road_Find) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    search.o(i.Road_Find) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    search.o(i.Road_Find) refers to ffixui.o(.text) for __aeabi_f2uiz
+    search.o(i.Road_Find) refers to ffltui.o(.text) for __aeabi_ui2f
+    search.o(i.Road_Find) refers to fadd.o(.text) for __aeabi_frsub
+    search.o(i.Road_Find) refers to search.o(.data) for Road_state
+    search.o(i.Road_Find) refers to control.o(.data) for Speed_Set
+    search.o(i.Road_Find) refers to mpu6050.o(.data) for imu_data
+    filter.o(i.Butterworth_Parameter_Init) refers to filter.o(i.set_cutoff_frequency) for set_cutoff_frequency
+    filter.o(i.Butterworth_Parameter_Init) refers to filter.o(.bss) for Butter_80HZ_Parameter_Acce
+    filter.o(i.Kalman_Filter) refers to fadd.o(.text) for __aeabi_fsub
+    filter.o(i.Kalman_Filter) refers to fmul.o(.text) for __aeabi_fmul
+    filter.o(i.Kalman_Filter) refers to fdiv.o(.text) for __aeabi_fdiv
+    filter.o(i.Kalman_Filter) refers to filter.o(.data) for q_bias
+    filter.o(i.Kalman_Filter) refers to mpu6050.o(.data) for imu_data
+    filter.o(i.Kalman_Filter) refers to filter.o(.bss) for Pdot
+    filter.o(i.LPButterworth) refers to fmul.o(.text) for __aeabi_fmul
+    filter.o(i.LPButterworth) refers to fadd.o(.text) for __aeabi_fadd
+    filter.o(i.LPButterworth) refers to filter.o(.data) for LPF_Cnt
+    filter.o(i.LPF_1) refers to fadd.o(.text) for __aeabi_fsub
+    filter.o(i.LPF_1) refers to fmul.o(.text) for __aeabi_fmul
+    filter.o(i.LPF_1) refers to fdiv.o(.text) for __aeabi_fdiv
+    filter.o(i.Moving_Average) refers to ffltui.o(.text) for __aeabi_ui2f
+    filter.o(i.Moving_Average) refers to fadd.o(.text) for __aeabi_fsub
+    filter.o(i.Moving_Average) refers to fdiv.o(.text) for __aeabi_fdiv
+    filter.o(i.Moving_Average) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    filter.o(i.Moving_Average) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    filter.o(i.Moving_Average) refers to fmul.o(.text) for __aeabi_fmul
+    filter.o(i.fix_inte_filter) refers to fadd.o(.text) for __aeabi_fadd
+    filter.o(i.fix_inte_filter) refers to fmul.o(.text) for __aeabi_fmul
+    filter.o(i.fix_inte_filter) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    filter.o(i.limit_filter) refers to filter.o(i.LPF_1) for LPF_1
+    filter.o(i.limit_filter) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    filter.o(i.set_cutoff_frequency) refers to fdiv.o(.text) for __aeabi_fdiv
+    filter.o(i.set_cutoff_frequency) refers to tanf.o(i.tanf) for tanf
+    filter.o(i.set_cutoff_frequency) refers to fmul.o(.text) for __aeabi_fmul
+    filter.o(i.set_cutoff_frequency) refers to cosf.o(i.cosf) for cosf
+    filter.o(i.set_cutoff_frequency) refers to fadd.o(.text) for __aeabi_fadd
+    filter.o(i.set_cutoff_frequency) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    filter.o(i.set_lpf_alpha) refers to dflti.o(.text) for __aeabi_i2d
+    filter.o(i.set_lpf_alpha) refers to dmul.o(.text) for __aeabi_dmul
+    filter.o(i.set_lpf_alpha) refers to ddiv.o(.text) for __aeabi_ddiv
+    filter.o(i.set_lpf_alpha) refers to d2f.o(.text) for __aeabi_d2f
+    filter.o(i.set_lpf_alpha) refers to fadd.o(.text) for __aeabi_fadd
+    filter.o(i.set_lpf_alpha) refers to fdiv.o(.text) for __aeabi_fdiv
+    filter.o(i.steepest_descend) refers to ffltui.o(.text) for __aeabi_ui2f
+    filter.o(i.steepest_descend) refers to fflti.o(.text) for __aeabi_i2f
+    filter.o(i.steepest_descend) refers to fdiv.o(.text) for __aeabi_fdiv
+    filter.o(i.steepest_descend) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    filter.o(i.steepest_descend) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    filter.o(i.steepest_descend) refers to fmul.o(.text) for __aeabi_fmul
+    filter.o(i.steepest_descend) refers to fadd.o(.text) for __aeabi_fadd
+    filter.o(i.steepest_descend) refers to ffixi.o(.text) for __aeabi_f2iz
+    mpu6050.o(i.Angle_Calculate) refers to mymath.o(i.fast_atan2) for fast_atan2
+    mpu6050.o(i.Angle_Calculate) refers to fmul.o(.text) for __aeabi_fmul
+    mpu6050.o(i.Angle_Calculate) refers to fdiv.o(.text) for __aeabi_fdiv
+    mpu6050.o(i.Angle_Calculate) refers to filter.o(i.Kalman_Filter) for Kalman_Filter
+    mpu6050.o(i.Angle_Calculate) refers to control.o(.bss) for ACC_Real
+    mpu6050.o(i.Data_Filter) refers to ldiv.o(.text) for __aeabi_ldivmod
+    mpu6050.o(i.Data_Filter) refers to ffltl.o(.text) for __aeabi_l2f
+    mpu6050.o(i.Data_Filter) refers to fdiv.o(.text) for __aeabi_fdiv
+    mpu6050.o(i.Data_Filter) refers to control.o(.data) for ACC
+    mpu6050.o(i.Data_Filter) refers to mpu6050.o(.bss) for ACC_X_BUF
+    mpu6050.o(i.Data_Filter) refers to control.o(.bss) for ACC_Real
+    mpu6050.o(i.Data_steepest) refers to filter.o(i.steepest_descend) for steepest_descend
+    mpu6050.o(i.Data_steepest) refers to fflti.o(.text) for __aeabi_i2f
+    mpu6050.o(i.Data_steepest) refers to fmul.o(.text) for __aeabi_fmul
+    mpu6050.o(i.Data_steepest) refers to control.o(.data) for ACC
+    mpu6050.o(i.Data_steepest) refers to mpu6050.o(.bss) for steepest_ax
+    mpu6050.o(i.Data_steepest) refers to control.o(.bss) for GYRO_Real
+    mpu6050.o(i.GetData) refers to my_i2c.o(i.simiic_read_reg) for simiic_read_reg
+    mpu6050.o(i.IMU_update) refers to fmul.o(.text) for __aeabi_fmul
+    mpu6050.o(i.IMU_update) refers to fadd.o(.text) for __aeabi_fadd
+    mpu6050.o(i.IMU_update) refers to mymath.o(i.my_sqrt) for my_sqrt
+    mpu6050.o(i.IMU_update) refers to fdiv.o(.text) for __aeabi_fdiv
+    mpu6050.o(i.IMU_update) refers to filter.o(i.limit_filter) for limit_filter
+    mpu6050.o(i.IMU_update) refers to f2d.o(.text) for __aeabi_f2d
+    mpu6050.o(i.IMU_update) refers to asin.o(i.asin) for asin
+    mpu6050.o(i.IMU_update) refers to dmul.o(.text) for __aeabi_dmul
+    mpu6050.o(i.IMU_update) refers to d2f.o(.text) for __aeabi_d2f
+    mpu6050.o(i.IMU_update) refers to mymath.o(i.fast_atan2) for fast_atan2
+    mpu6050.o(i.IMU_update) refers to mpu6050.o(.data) for err_lf_x
+    mpu6050.o(i.IMU_update) refers to mpu6050.o(.bss) for vec_err_i
+    mpu6050.o(i.MPU6050_GetData) refers to mpu6050.o(i.GetData) for GetData
+    mpu6050.o(i.MPU6050_GetData) refers to mpu6050.o(.data) for Offset_OK
+    mpu6050.o(i.MPU6050_GetData) refers to control.o(.data) for GYRO_Offset
+    mpu6050.o(i.MPU6050_Init) refers to my_i2c.o(i.IIC_init) for IIC_init
+    mpu6050.o(i.MPU6050_Init) refers to kea128_systick.o(i.systick_delay_ms) for systick_delay_ms
+    mpu6050.o(i.MPU6050_Init) refers to my_i2c.o(i.simiic_write_reg) for simiic_write_reg
+    mpu6050.o(i.MPU6050_Init) refers to my_i2c.o(i.simiic_read_reg) for simiic_read_reg
+    mpu6050.o(i.MPU6050_Init) refers to mpu6050.o(i.MPU6050_Offset) for MPU6050_Offset
+    mpu6050.o(i.MPU6050_Init) refers to control.o(i.Balance_Init) for Balance_Init
+    mpu6050.o(i.MPU6050_Offset) refers to memseta.o(.text) for __aeabi_memclr4
+    mpu6050.o(i.MPU6050_Offset) refers to mpu6050.o(i.MPU6050_GetData) for MPU6050_GetData
+    mpu6050.o(i.MPU6050_Offset) refers to kea128_systick.o(i.systick_delay_ms) for systick_delay_ms
+    mpu6050.o(i.MPU6050_Offset) refers to ldiv.o(.text) for __aeabi_ldivmod
+    mpu6050.o(i.MPU6050_Offset) refers to control.o(.data) for ACC_Offset
+    mpu6050.o(i.MPU6050_Offset) refers to mpu6050.o(.data) for Offset_OK
+    led.o(i.button_init) refers to kea128_gpio.o(i.gpio_init) for gpio_init
+    led.o(i.button_init) refers to kea128_port.o(i.port_pull) for port_pull
+    led.o(i.led_init) refers to kea128_gpio.o(i.gpio_init) for gpio_init
+    adrc.o(i.ADRC_Control) refers to fadd.o(.text) for __aeabi_fsub
+    adrc.o(i.ADRC_Control) refers to fdiv.o(.text) for __aeabi_fdiv
+    adrc.o(i.ADRC_Control) refers to adrc.o(i.Fhan_ADRC) for Fhan_ADRC
+    adrc.o(i.ADRC_Control) refers to fmul.o(.text) for __aeabi_fmul
+    adrc.o(i.ADRC_Control) refers to adrc.o(i.ADRC_LPF) for ADRC_LPF
+    adrc.o(i.ADRC_Control) refers to adrc.o(i.Nolinear_Conbination_ADRC) for Nolinear_Conbination_ADRC
+    adrc.o(i.ADRC_Control) refers to adrc.o(i.Constrain_Float) for Constrain_Float
+    adrc.o(i.ADRC_Control) refers to adrc.o(.data) for ADRC_Div_LPF_Parameter
+    adrc.o(i.ADRC_Init) refers to ffixui.o(.text) for __aeabi_f2uiz
+    adrc.o(i.ADRC_Init) refers to adrc.o(.constdata) for ADRC_Unit
+    adrc.o(i.ADRC_LPF) refers to fmul.o(.text) for __aeabi_fmul
+    adrc.o(i.ADRC_LPF) refers to fadd.o(.text) for __aeabi_fadd
+    adrc.o(i.Constrain_Float) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    adrc.o(i.Constrain_Float) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    adrc.o(i.ESO_ADRC) refers to fadd.o(.text) for __aeabi_fsub
+    adrc.o(i.ESO_ADRC) refers to ffltui.o(.text) for __aeabi_ui2f
+    adrc.o(i.ESO_ADRC) refers to fmul.o(.text) for __aeabi_fmul
+    adrc.o(i.ESO_ADRC) refers to adrc.o(i.Fal_ADRC) for Fal_ADRC
+    adrc.o(i.Fal_ADRC) refers to fadd.o(.text) for __aeabi_fadd
+    adrc.o(i.Fal_ADRC) refers to adrc.o(i.Sign_ADRC) for Sign_ADRC
+    adrc.o(i.Fal_ADRC) refers to fflti.o(.text) for __aeabi_i2f
+    adrc.o(i.Fal_ADRC) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    adrc.o(i.Fal_ADRC) refers to powf.o(i.powf) for powf
+    adrc.o(i.Fal_ADRC) refers to fmul.o(.text) for __aeabi_fmul
+    adrc.o(i.Fal_ADRC) refers to fdiv.o(.text) for __aeabi_fdiv
+    adrc.o(i.Fhan_ADRC) refers to fadd.o(.text) for __aeabi_fsub
+    adrc.o(i.Fhan_ADRC) refers to ffltui.o(.text) for __aeabi_ui2f
+    adrc.o(i.Fhan_ADRC) refers to fmul.o(.text) for __aeabi_fmul
+    adrc.o(i.Fhan_ADRC) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    adrc.o(i.Fhan_ADRC) refers to mymath.o(i.my_sqrt) for my_sqrt
+    adrc.o(i.Fhan_ADRC) refers to adrc.o(i.Sign_ADRC) for Sign_ADRC
+    adrc.o(i.Fhan_ADRC) refers to fflti.o(.text) for __aeabi_i2f
+    adrc.o(i.Fhan_ADRC) refers to fdiv.o(.text) for __aeabi_fdiv
+    adrc.o(i.Fhan_ADRC) refers to adrc.o(i.Fsg_ADRC) for Fsg_ADRC
+    adrc.o(i.Fsg_ADRC) refers to fadd.o(.text) for __aeabi_fadd
+    adrc.o(i.Fsg_ADRC) refers to adrc.o(i.Sign_ADRC) for Sign_ADRC
+    adrc.o(i.My_ADRC_Control) refers to adrc.o(i.Fhan_ADRC) for Fhan_ADRC
+    adrc.o(i.My_ADRC_Control) refers to ffixi.o(.text) for __aeabi_f2iz
+    adrc.o(i.My_ADRC_Control) refers to pid.o(i.PID_Increase) for PID_Increase
+    adrc.o(i.My_ADRC_Control) refers to fflti.o(.text) for __aeabi_i2f
+    adrc.o(i.My_ADRC_Control) refers to fadd.o(.text) for __aeabi_fadd
+    adrc.o(i.My_ADRC_Control) refers to pid.o(.data) for Ang_gyro
+    adrc.o(i.My_ADRC_Control) refers to pid.o(.bss) for Ang_gyro_PID
+    adrc.o(i.Nolinear_Conbination_ADRC) refers to adrc.o(i.Constrain_Float) for Constrain_Float
+    adrc.o(i.Nolinear_Conbination_ADRC) refers to adrc.o(i.Fal_ADRC) for Fal_ADRC
+    adrc.o(i.Nolinear_Conbination_ADRC) refers to fmul.o(.text) for __aeabi_fmul
+    adrc.o(i.Nolinear_Conbination_ADRC) refers to fadd.o(.text) for __aeabi_fadd
+    adrc.o(i.Sign_ADRC) refers to f2d.o(.text) for __aeabi_f2d
+    adrc.o(i.Sign_ADRC) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    adrc.o(i.Sign_ADRC) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    ano_data_transfer.o(i.ANO_DT_Data_Exchange) refers to fmul.o(.text) for __aeabi_fmul
+    ano_data_transfer.o(i.ANO_DT_Data_Exchange) refers to ffixi.o(.text) for __aeabi_f2iz
+    ano_data_transfer.o(i.ANO_DT_Data_Exchange) refers to ano_data_transfer.o(i.ANO_DT_Send_PID) for ANO_DT_Send_PID
+    ano_data_transfer.o(i.ANO_DT_Data_Exchange) refers to ano_data_transfer.o(i.ANO_DT_Send_Status) for ANO_DT_Send_Status
+    ano_data_transfer.o(i.ANO_DT_Data_Exchange) refers to ano_data_transfer.o(i.ANO_DT_Send_Senser) for ANO_DT_Send_Senser
+    ano_data_transfer.o(i.ANO_DT_Data_Exchange) refers to ano_data_transfer.o(.bss) for f
+    ano_data_transfer.o(i.ANO_DT_Data_Exchange) refers to ano_data_transfer.o(.data) for cnt
+    ano_data_transfer.o(i.ANO_DT_Data_Exchange) refers to pid.o(.data) for Ang_gyro
+    ano_data_transfer.o(i.ANO_DT_Data_Exchange) refers to control.o(.data) for Speed_Set
+    ano_data_transfer.o(i.ANO_DT_Data_Exchange) refers to mpu6050.o(.data) for imu_data
+    ano_data_transfer.o(i.ANO_DT_Data_Exchange) refers to search.o(.data) for Middle_Err
+    ano_data_transfer.o(i.ANO_DT_Data_Exchange) refers to em.o(.data) for right_adc
+    ano_data_transfer.o(i.ANO_DT_Data_Receive_Anl) refers to dflti.o(.text) for __aeabi_i2d
+    ano_data_transfer.o(i.ANO_DT_Data_Receive_Anl) refers to ddiv.o(.text) for __aeabi_ddiv
+    ano_data_transfer.o(i.ANO_DT_Data_Receive_Anl) refers to d2f.o(.text) for __aeabi_d2f
+    ano_data_transfer.o(i.ANO_DT_Data_Receive_Anl) refers to ano_data_transfer.o(i.ANO_DT_Send_Check) for ANO_DT_Send_Check
+    ano_data_transfer.o(i.ANO_DT_Data_Receive_Anl) refers to fflti.o(.text) for __aeabi_i2f
+    ano_data_transfer.o(i.ANO_DT_Data_Receive_Anl) refers to ano_data_transfer.o(.bss) for f
+    ano_data_transfer.o(i.ANO_DT_Data_Receive_Anl) refers to ano_data_transfer.o(.data) for cnt
+    ano_data_transfer.o(i.ANO_DT_Data_Receive_Anl) refers to pid.o(.data) for Speed
+    ano_data_transfer.o(i.ANO_DT_Data_Receive_Anl) refers to control.o(.data) for Speed_Set
+    ano_data_transfer.o(i.ANO_DT_Data_Receive_Prepare) refers to ano_data_transfer.o(i.ANO_DT_Data_Receive_Anl) for ANO_DT_Data_Receive_Anl
+    ano_data_transfer.o(i.ANO_DT_Data_Receive_Prepare) refers to ano_data_transfer.o(.data) for state
+    ano_data_transfer.o(i.ANO_DT_Data_Receive_Prepare) refers to ano_data_transfer.o(.bss) for RxBuffer
+    ano_data_transfer.o(i.ANO_DT_Send_Check) refers to ano_data_transfer.o(i.ANO_DT_Send_Data) for ANO_DT_Send_Data
+    ano_data_transfer.o(i.ANO_DT_Send_Check) refers to ano_data_transfer.o(.bss) for data_to_send
+    ano_data_transfer.o(i.ANO_DT_Send_Data) refers to kea128_uart.o(i.uart_putbuff) for uart_putbuff
+    ano_data_transfer.o(i.ANO_DT_Send_MotoPWM) refers to ano_data_transfer.o(i.ANO_DT_Send_Data) for ANO_DT_Send_Data
+    ano_data_transfer.o(i.ANO_DT_Send_MotoPWM) refers to ano_data_transfer.o(.bss) for data_to_send
+    ano_data_transfer.o(i.ANO_DT_Send_PID) refers to ano_data_transfer.o(i.ANO_DT_Send_Data) for ANO_DT_Send_Data
+    ano_data_transfer.o(i.ANO_DT_Send_PID) refers to ano_data_transfer.o(.bss) for data_to_send
+    ano_data_transfer.o(i.ANO_DT_Send_Power) refers to ano_data_transfer.o(i.ANO_DT_Send_Data) for ANO_DT_Send_Data
+    ano_data_transfer.o(i.ANO_DT_Send_Power) refers to ano_data_transfer.o(.bss) for data_to_send
+    ano_data_transfer.o(i.ANO_DT_Send_RCData) refers to ano_data_transfer.o(i.ANO_DT_Send_Data) for ANO_DT_Send_Data
+    ano_data_transfer.o(i.ANO_DT_Send_RCData) refers to ano_data_transfer.o(.bss) for data_to_send
+    ano_data_transfer.o(i.ANO_DT_Send_Senser) refers to ano_data_transfer.o(i.ANO_DT_Send_Data) for ANO_DT_Send_Data
+    ano_data_transfer.o(i.ANO_DT_Send_Senser) refers to ano_data_transfer.o(.bss) for data_to_send
+    ano_data_transfer.o(i.ANO_DT_Send_Senser2) refers to ano_data_transfer.o(i.ANO_DT_Send_Data) for ANO_DT_Send_Data
+    ano_data_transfer.o(i.ANO_DT_Send_Senser2) refers to ano_data_transfer.o(.bss) for data_to_send
+    ano_data_transfer.o(i.ANO_DT_Send_Speed) refers to fmul.o(.text) for __aeabi_fmul
+    ano_data_transfer.o(i.ANO_DT_Send_Speed) refers to ffixi.o(.text) for __aeabi_f2iz
+    ano_data_transfer.o(i.ANO_DT_Send_Speed) refers to ano_data_transfer.o(i.ANO_DT_Send_Data) for ANO_DT_Send_Data
+    ano_data_transfer.o(i.ANO_DT_Send_Speed) refers to ano_data_transfer.o(.bss) for data_to_send
+    ano_data_transfer.o(i.ANO_DT_Send_Status) refers to fmul.o(.text) for __aeabi_fmul
+    ano_data_transfer.o(i.ANO_DT_Send_Status) refers to ffixi.o(.text) for __aeabi_f2iz
+    ano_data_transfer.o(i.ANO_DT_Send_Status) refers to ano_data_transfer.o(i.ANO_DT_Send_Data) for ANO_DT_Send_Data
+    ano_data_transfer.o(i.ANO_DT_Send_Status) refers to ano_data_transfer.o(.bss) for data_to_send
+    ano_data_transfer.o(i.ANO_DT_Send_User) refers to ffixi.o(.text) for __aeabi_f2iz
+    ano_data_transfer.o(i.ANO_DT_Send_User) refers to ano_data_transfer.o(i.ANO_DT_Send_Data) for ANO_DT_Send_Data
+    ano_data_transfer.o(i.ANO_DT_Send_User) refers to ano_data_transfer.o(.bss) for data_to_send
+    ano_data_transfer.o(i.ANO_DT_Send_User) refers to mpu6050.o(.data) for imu_data
+    ano_data_transfer.o(i.ANO_DT_Send_Version) refers to ano_data_transfer.o(i.ANO_DT_Send_Data) for ANO_DT_Send_Data
+    ano_data_transfer.o(i.ANO_DT_Send_Version) refers to ano_data_transfer.o(.bss) for data_to_send
+    show.o(i.Check_BottonPress) refers to kea128_gpio.o(i.gpio_get) for gpio_get
+    show.o(i.Check_BottonPress) refers to kea128_systick.o(i.systick_delay_ms) for systick_delay_ms
+    show.o(i.Check_BottonPress) refers to seekfree_oled.o(i.OLED_Fill) for OLED_Fill
+    show.o(i.Check_BottonPress) refers to control.o(i.Balance_Init) for Balance_Init
+    show.o(i.Check_BottonPress) refers to show.o(.data) for OLED_Refresh
+    show.o(i.Check_BottonPress) refers to control.o(.data) for Run_Flag
+    show.o(i.Check_BottonPress) refers to search.o(.data) for speed_low
+    show.o(i.OLED_Draw_UI) refers to seekfree_oled.o(i.OLED_P6x8Str) for OLED_P6x8Str
+    show.o(i.OLED_Draw_UI) refers to ffixi.o(.text) for __aeabi_f2iz
+    show.o(i.OLED_Draw_UI) refers to seekfree_oled.o(i.OLED_Print_Num1) for OLED_Print_Num1
+    show.o(i.OLED_Draw_UI) refers to kea128_adc.o(i.adc_once) for adc_once
+    show.o(i.OLED_Draw_UI) refers to dfltui.o(.text) for __aeabi_ui2d
+    show.o(i.OLED_Draw_UI) refers to dmul.o(.text) for __aeabi_dmul
+    show.o(i.OLED_Draw_UI) refers to ddiv.o(.text) for __aeabi_ddiv
+    show.o(i.OLED_Draw_UI) refers to dfixi.o(.text) for __aeabi_d2iz
+    show.o(i.OLED_Draw_UI) refers to show.o(.data) for mark
+    show.o(i.OLED_Draw_UI) refers to mpu6050.o(.data) for imu_data
+    show.o(i.OLED_Draw_UI) refers to em.o(.data) for left_adc
+    show.o(i.OLED_Draw_UI) refers to search.o(.data) for Middle_Err
+    show.o(i.OLED_Draw_UI) refers to control.o(.data) for Run_Stop
+    show.o(i.Ring_Set) refers to seekfree_oled.o(i.OLED_P6x8Str) for OLED_P6x8Str
+    show.o(i.Ring_Set) refers to kea128_gpio.o(i.gpio_get) for gpio_get
+    show.o(i.Ring_Set) refers to kea128_systick.o(i.systick_delay_ms) for systick_delay_ms
+    show.o(i.Ring_Set) refers to seekfree_oled.o(i.OLED_Fill) for OLED_Fill
+    show.o(i.Ring_Set) refers to show.o(.data) for mark
+    show.o(i.Ring_Set) refers to em.o(.data) for Ring_Num
+    mymath.o(i.To_180_degrees) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    mymath.o(i.To_180_degrees) refers to fadd.o(.text) for __aeabi_fsub
+    mymath.o(i.To_180_degrees) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    mymath.o(i.To_180_degrees_db) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    mymath.o(i.To_180_degrees_db) refers to dadd.o(.text) for __aeabi_dsub
+    mymath.o(i.To_180_degrees_db) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    mymath.o(i.fast_atan2) refers to cfcmple.o(.text) for __aeabi_cfcmpeq
+    mymath.o(i.fast_atan2) refers to mymath.o(i.my_abs) for my_abs
+    mymath.o(i.fast_atan2) refers to fdiv.o(.text) for __aeabi_fdiv
+    mymath.o(i.fast_atan2) refers to fmul.o(.text) for __aeabi_fmul
+    mymath.o(i.fast_atan2) refers to fadd.o(.text) for __aeabi_fsub
+    mymath.o(i.fast_atan2) refers to ffixi.o(.text) for __aeabi_f2iz
+    mymath.o(i.fast_atan2) refers to fflti.o(.text) for __aeabi_i2f
+    mymath.o(i.fast_atan2) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    mymath.o(i.fast_atan2) refers to mymath.o(.data) for fast_atan_table
+    mymath.o(i.invSqrt) refers to fmul.o(.text) for __aeabi_fmul
+    mymath.o(i.invSqrt) refers to fadd.o(.text) for __aeabi_frsub
+    mymath.o(i.mx_sin) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    mymath.o(i.mx_sin) refers to dmul.o(.text) for __aeabi_dmul
+    mymath.o(i.mx_sin) refers to dadd.o(.text) for __aeabi_dadd
+    mymath.o(i.my_HLP) refers to fmul.o(.text) for __aeabi_fmul
+    mymath.o(i.my_HLP) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    mymath.o(i.my_HLP) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    mymath.o(i.my_HLP) refers to fadd.o(.text) for __aeabi_fsub
+    mymath.o(i.my_HLP) refers to fdiv.o(.text) for __aeabi_fdiv
+    mymath.o(i.my_abs) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    mymath.o(i.my_atan) refers to mymath.o(i.fast_atan2) for fast_atan2
+    mymath.o(i.my_cos) refers to dadd.o(.text) for __aeabi_dadd
+    mymath.o(i.my_cos) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    mymath.o(i.my_cos) refers to dflti.o(.text) for __aeabi_i2d
+    mymath.o(i.my_cos) refers to mymath.o(i.my_sin) for my_sin
+    mymath.o(i.my_cos) refers to dmul.o(.text) for __aeabi_dmul
+    mymath.o(i.my_cos) refers to d2f.o(.text) for __aeabi_d2f
+    mymath.o(i.my_deadzone) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    mymath.o(i.my_deadzone) refers to fadd.o(.text) for __aeabi_fsub
+    mymath.o(i.my_deadzone) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    mymath.o(i.my_deadzone_2) refers to fadd.o(.text) for __aeabi_fadd
+    mymath.o(i.my_deadzone_2) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    mymath.o(i.my_deadzone_2) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    mymath.o(i.my_sin) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    mymath.o(i.my_sin) refers to dadd.o(.text) for __aeabi_dsub
+    mymath.o(i.my_sin) refers to dflti.o(.text) for __aeabi_i2d
+    mymath.o(i.my_sin) refers to mymath.o(i.mx_sin) for mx_sin
+    mymath.o(i.my_sin) refers to dmul.o(.text) for __aeabi_dmul
+    mymath.o(i.my_sqrt) refers to fmul.o(.text) for __aeabi_fmul
+    mymath.o(i.my_sqrt) refers to fadd.o(.text) for __aeabi_frsub
+    my_i2c.o(i.I2C_SendACK) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    my_i2c.o(i.I2C_SendACK) refers to kea128_gpio.o(i.gpio_ddr) for gpio_ddr
+    my_i2c.o(i.I2C_SendACK) refers to my_i2c.o(i.My_Delay_Us) for My_Delay_Us
+    my_i2c.o(i.IIC_init) refers to kea128_gpio.o(i.gpio_init) for gpio_init
+    my_i2c.o(i.IIC_init) refers to kea128_port.o(i.port_pull) for port_pull
+    my_i2c.o(i.IIC_start) refers to kea128_gpio.o(i.gpio_ddr) for gpio_ddr
+    my_i2c.o(i.IIC_start) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    my_i2c.o(i.IIC_start) refers to my_i2c.o(i.My_Delay_Us) for My_Delay_Us
+    my_i2c.o(i.IIC_stop) refers to kea128_gpio.o(i.gpio_ddr) for gpio_ddr
+    my_i2c.o(i.IIC_stop) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    my_i2c.o(i.IIC_stop) refers to my_i2c.o(i.My_Delay_Us) for My_Delay_Us
+    my_i2c.o(i.SCCB_WaitAck) refers to kea128_gpio.o(i.gpio_ddr) for gpio_ddr
+    my_i2c.o(i.SCCB_WaitAck) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    my_i2c.o(i.SCCB_WaitAck) refers to my_i2c.o(i.My_Delay_Us) for My_Delay_Us
+    my_i2c.o(i.SCCB_WaitAck) refers to my_i2c.o(i.IIC_stop) for IIC_stop
+    my_i2c.o(i.SCCB_WaitAck) refers to kea128_gpio.o(i.gpio_get) for gpio_get
+    my_i2c.o(i.read_ch) refers to kea128_gpio.o(i.gpio_ddr) for gpio_ddr
+    my_i2c.o(i.read_ch) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    my_i2c.o(i.read_ch) refers to my_i2c.o(i.My_Delay_Us) for My_Delay_Us
+    my_i2c.o(i.read_ch) refers to kea128_gpio.o(i.gpio_get) for gpio_get
+    my_i2c.o(i.read_ch) refers to my_i2c.o(i.I2C_SendACK) for I2C_SendACK
+    my_i2c.o(i.send_ch) refers to kea128_gpio.o(i.gpio_ddr) for gpio_ddr
+    my_i2c.o(i.send_ch) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    my_i2c.o(i.send_ch) refers to my_i2c.o(i.My_Delay_Us) for My_Delay_Us
+    my_i2c.o(i.send_ch) refers to my_i2c.o(i.SCCB_WaitAck) for SCCB_WaitAck
+    my_i2c.o(i.simiic_read_len) refers to my_i2c.o(i.IIC_start) for IIC_start
+    my_i2c.o(i.simiic_read_len) refers to my_i2c.o(i.send_ch) for send_ch
+    my_i2c.o(i.simiic_read_len) refers to my_i2c.o(i.read_ch) for read_ch
+    my_i2c.o(i.simiic_read_len) refers to my_i2c.o(i.IIC_stop) for IIC_stop
+    my_i2c.o(i.simiic_read_reg) refers to my_i2c.o(i.IIC_start) for IIC_start
+    my_i2c.o(i.simiic_read_reg) refers to my_i2c.o(i.send_ch) for send_ch
+    my_i2c.o(i.simiic_read_reg) refers to my_i2c.o(i.IIC_stop) for IIC_stop
+    my_i2c.o(i.simiic_read_reg) refers to my_i2c.o(i.read_ch) for read_ch
+    my_i2c.o(i.simiic_write_len) refers to my_i2c.o(i.IIC_start) for IIC_start
+    my_i2c.o(i.simiic_write_len) refers to my_i2c.o(i.send_ch) for send_ch
+    my_i2c.o(i.simiic_write_len) refers to my_i2c.o(i.IIC_stop) for IIC_stop
+    my_i2c.o(i.simiic_write_reg) refers to my_i2c.o(i.IIC_start) for IIC_start
+    my_i2c.o(i.simiic_write_reg) refers to my_i2c.o(i.send_ch) for send_ch
+    my_i2c.o(i.simiic_write_reg) refers to my_i2c.o(i.IIC_stop) for IIC_stop
+    asin.o(i.__softfp_asin) refers (Special) to iusefp.o(.text) for __I$use$fp
+    asin.o(i.__softfp_asin) refers to asin.o(i.asin) for asin
+    asin.o(i.asin) refers (Special) to iusefp.o(.text) for __I$use$fp
+    asin.o(i.asin) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    asin.o(i.asin) refers to dmul.o(.text) for __aeabi_dmul
+    asin.o(i.asin) refers to errno.o(i.__set_errno) for __set_errno
+    asin.o(i.asin) refers to dunder.o(i.__mathlib_dbl_invalid) for __mathlib_dbl_invalid
+    asin.o(i.asin) refers to fpclassify.o(i.__ARM_fpclassify) for __ARM_fpclassify
+    asin.o(i.asin) refers to dunder.o(i.__mathlib_dbl_underflow) for __mathlib_dbl_underflow
+    asin.o(i.asin) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    asin.o(i.asin) refers to dadd.o(.text) for __aeabi_dadd
+    asin.o(i.asin) refers to ddiv.o(.text) for __aeabi_ddiv
+    asin.o(i.asin) refers to dscalb.o(.text) for __ARM_scalbn
+    asin.o(i.asin) refers to sqrt.o(i.sqrt) for sqrt
+    asin.o(i.asin) refers to asin.o(.constdata) for .constdata
+    asin.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    asin_x.o(i.____softfp_asin$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    asin_x.o(i.____softfp_asin$lsc) refers to asin_x.o(i.__asin$lsc) for __asin$lsc
+    asin_x.o(i.__asin$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    asin_x.o(i.__asin$lsc) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    asin_x.o(i.__asin$lsc) refers to dmul.o(.text) for __aeabi_dmul
+    asin_x.o(i.__asin$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    asin_x.o(i.__asin$lsc) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    asin_x.o(i.__asin$lsc) refers to dadd.o(.text) for __aeabi_dadd
+    asin_x.o(i.__asin$lsc) refers to ddiv.o(.text) for __aeabi_ddiv
+    asin_x.o(i.__asin$lsc) refers to dscalb.o(.text) for __ARM_scalbn
+    asin_x.o(i.__asin$lsc) refers to sqrt.o(i.sqrt) for sqrt
+    asin_x.o(i.__asin$lsc) refers to asin_x.o(.constdata) for .constdata
+    asin_x.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cosf.o(i.__softfp_cosf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cosf.o(i.__softfp_cosf) refers to cosf.o(i.cosf) for cosf
+    cosf.o(i.cosf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cosf.o(i.cosf) refers to fmul.o(.text) for __aeabi_fmul
+    cosf.o(i.cosf) refers to frnd.o(.text) for _frnd
+    cosf.o(i.cosf) refers to ffixi.o(.text) for __aeabi_f2iz
+    cosf.o(i.cosf) refers to fadd.o(.text) for __aeabi_frsub
+    cosf.o(i.cosf) refers to rredf.o(i.__mathlib_rredf2) for __mathlib_rredf2
+    cosf.o(i.cosf) refers to errno.o(i.__set_errno) for __set_errno
+    cosf.o(i.cosf) refers to funder.o(i.__mathlib_flt_invalid) for __mathlib_flt_invalid
+    cosf.o(i.cosf) refers to funder.o(i.__mathlib_flt_infnan) for __mathlib_flt_infnan
+    cosf_x.o(i.____softfp_cosf$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cosf_x.o(i.____softfp_cosf$lsc) refers to cosf_x.o(i.__cosf$lsc) for __cosf$lsc
+    cosf_x.o(i.__cosf$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cosf_x.o(i.__cosf$lsc) refers to fmul.o(.text) for __aeabi_fmul
+    cosf_x.o(i.__cosf$lsc) refers to frnd.o(.text) for _frnd
+    cosf_x.o(i.__cosf$lsc) refers to ffixi.o(.text) for __aeabi_f2iz
+    cosf_x.o(i.__cosf$lsc) refers to fadd.o(.text) for __aeabi_frsub
+    cosf_x.o(i.__cosf$lsc) refers to rredf.o(i.__mathlib_rredf2) for __mathlib_rredf2
+    cosf_x.o(i.__cosf$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    cosf_x.o(i.__cosf$lsc) refers to funder.o(i.__mathlib_flt_infnan) for __mathlib_flt_infnan
+    powf.o(i.__softfp_powf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    powf.o(i.__softfp_powf) refers to powf.o(i.powf) for powf
+    powf.o(i.powf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    powf.o(i.powf) refers to fflti.o(.text) for __aeabi_i2f
+    powf.o(i.powf) refers to fscalb.o(.text) for __ARM_scalbnf
+    powf.o(i.powf) refers to fadd.o(.text) for __aeabi_fadd
+    powf.o(i.powf) refers to fdiv.o(.text) for __aeabi_fdiv
+    powf.o(i.powf) refers to fmul.o(.text) for __aeabi_fmul
+    powf.o(i.powf) refers to fpstat.o(.text) for __ieee_status
+    powf.o(i.powf) refers to ffixir.o(.text) for _ffix_r
+    powf.o(i.powf) refers to fpclassifyf.o(i.__ARM_fpclassifyf) for __ARM_fpclassifyf
+    powf.o(i.powf) refers to funder.o(i.__mathlib_flt_underflow) for __mathlib_flt_underflow
+    powf.o(i.powf) refers to errno.o(i.__set_errno) for __set_errno
+    powf.o(i.powf) refers to funder.o(i.__mathlib_flt_overflow) for __mathlib_flt_overflow
+    powf.o(i.powf) refers to funder.o(i.__mathlib_flt_invalid) for __mathlib_flt_invalid
+    powf.o(i.powf) refers to powf.o(.constdata) for .constdata
+    powf.o(i.powf) refers to funder.o(i.__mathlib_flt_infnan2) for __mathlib_flt_infnan2
+    powf.o(i.powf) refers to funder.o(i.__mathlib_flt_divzero) for __mathlib_flt_divzero
+    powf.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    powf_x.o(i.____softfp_powf$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    powf_x.o(i.____softfp_powf$lsc) refers to powf_x.o(i.__powf$lsc) for __powf$lsc
+    powf_x.o(i.__powf$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    powf_x.o(i.__powf$lsc) refers to fflti.o(.text) for __aeabi_i2f
+    powf_x.o(i.__powf$lsc) refers to fscalb.o(.text) for __ARM_scalbnf
+    powf_x.o(i.__powf$lsc) refers to fadd.o(.text) for __aeabi_fadd
+    powf_x.o(i.__powf$lsc) refers to fdiv.o(.text) for __aeabi_fdiv
+    powf_x.o(i.__powf$lsc) refers to fmul.o(.text) for __aeabi_fmul
+    powf_x.o(i.__powf$lsc) refers to fpstat.o(.text) for __ieee_status
+    powf_x.o(i.__powf$lsc) refers to ffixir.o(.text) for _ffix_r
+    powf_x.o(i.__powf$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    powf_x.o(i.__powf$lsc) refers to powf_x.o(.constdata) for .constdata
+    powf_x.o(i.__powf$lsc) refers to funder.o(i.__mathlib_flt_infnan2) for __mathlib_flt_infnan2
+    powf_x.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    tanf.o(i.__softfp_tanf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    tanf.o(i.__softfp_tanf) refers to tanf.o(i.tanf) for tanf
+    tanf.o(i.tanf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    tanf.o(i.tanf) refers to fmul.o(.text) for __aeabi_fmul
+    tanf.o(i.tanf) refers to frnd.o(.text) for _frnd
+    tanf.o(i.tanf) refers to ffixi.o(.text) for __aeabi_f2iz
+    tanf.o(i.tanf) refers to fadd.o(.text) for __aeabi_frsub
+    tanf.o(i.tanf) refers to fdiv.o(.text) for __aeabi_fdiv
+    tanf.o(i.tanf) refers to rredf.o(i.__mathlib_rredf2) for __mathlib_rredf2
+    tanf.o(i.tanf) refers to fpclassifyf.o(i.__ARM_fpclassifyf) for __ARM_fpclassifyf
+    tanf.o(i.tanf) refers to funder.o(i.__mathlib_flt_underflow) for __mathlib_flt_underflow
+    tanf.o(i.tanf) refers to errno.o(i.__set_errno) for __set_errno
+    tanf.o(i.tanf) refers to funder.o(i.__mathlib_flt_invalid) for __mathlib_flt_invalid
+    tanf.o(i.tanf) refers to funder.o(i.__mathlib_flt_infnan) for __mathlib_flt_infnan
+    tanf_x.o(i.____softfp_tanf$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    tanf_x.o(i.____softfp_tanf$lsc) refers to tanf_x.o(i.__tanf$lsc) for __tanf$lsc
+    tanf_x.o(i.__tanf$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    tanf_x.o(i.__tanf$lsc) refers to fmul.o(.text) for __aeabi_fmul
+    tanf_x.o(i.__tanf$lsc) refers to frnd.o(.text) for _frnd
+    tanf_x.o(i.__tanf$lsc) refers to ffixi.o(.text) for __aeabi_f2iz
+    tanf_x.o(i.__tanf$lsc) refers to fadd.o(.text) for __aeabi_frsub
+    tanf_x.o(i.__tanf$lsc) refers to fdiv.o(.text) for __aeabi_fdiv
+    tanf_x.o(i.__tanf$lsc) refers to rredf.o(i.__mathlib_rredf2) for __mathlib_rredf2
+    tanf_x.o(i.__tanf$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    tanf_x.o(i.__tanf$lsc) refers to funder.o(i.__mathlib_flt_infnan) for __mathlib_flt_infnan
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    idiv.o(.text) refers to uidiv.o(.text) for __aeabi_uidivmod
+    ldiv.o(.text) refers to uldiv.o(.text) for __aeabi_uldivmod
+    fadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fadd.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    fmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers to fepilogue.o(.text) for _float_round
+    dadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ddiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
+    fflti.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fflti.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    ffltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffltui.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    ffltl.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffltl.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    dflti.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dflti.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dfltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfltui.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ffixi.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixi.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixi.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    f2d.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cdcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cdrcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers to fepilogue.o(.text) for _float_round
+    cfcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cfrcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dunder.o(i.__mathlib_dbl_divzero) refers to ddiv.o(.text) for __aeabi_ddiv
+    dunder.o(i.__mathlib_dbl_infnan) refers to dscalb.o(.text) for __ARM_scalbn
+    dunder.o(i.__mathlib_dbl_infnan2) refers to dadd.o(.text) for __aeabi_dadd
+    dunder.o(i.__mathlib_dbl_invalid) refers to ddiv.o(.text) for __aeabi_ddiv
+    dunder.o(i.__mathlib_dbl_overflow) refers to dscalb.o(.text) for __ARM_scalbn
+    dunder.o(i.__mathlib_dbl_posinfnan) refers to dmul.o(.text) for __aeabi_dmul
+    dunder.o(i.__mathlib_dbl_underflow) refers to dscalb.o(.text) for __ARM_scalbn
+    fpclassify.o(i.__ARM_fpclassify) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fpclassifyf.o(i.__ARM_fpclassifyf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    funder.o(i.__mathlib_flt_divzero) refers to fdiv.o(.text) for __aeabi_fdiv
+    funder.o(i.__mathlib_flt_infnan) refers to fscalb.o(.text) for __ARM_scalbnf
+    funder.o(i.__mathlib_flt_infnan2) refers to fadd.o(.text) for __aeabi_fadd
+    funder.o(i.__mathlib_flt_invalid) refers to fdiv.o(.text) for __aeabi_fdiv
+    funder.o(i.__mathlib_flt_overflow) refers to fscalb.o(.text) for __ARM_scalbnf
+    funder.o(i.__mathlib_flt_posinfnan) refers to fmul.o(.text) for __aeabi_fmul
+    funder.o(i.__mathlib_flt_underflow) refers to fscalb.o(.text) for __ARM_scalbnf
+    poly.o(i.__kernel_poly) refers (Special) to iusefp.o(.text) for __I$use$fp
+    poly.o(i.__kernel_poly) refers to dmul.o(.text) for __aeabi_dmul
+    poly.o(i.__kernel_poly) refers to dadd.o(.text) for __aeabi_dadd
+    rredf.o(i.__mathlib_rredf2) refers (Special) to iusefp.o(.text) for __I$use$fp
+    rredf.o(i.__mathlib_rredf2) refers to rredf.o(i.__ARM_common_ll_muluu) for __ARM_common_ll_muluu
+    rredf.o(i.__mathlib_rredf2) refers to fflti.o(.text) for __aeabi_i2f
+    rredf.o(i.__mathlib_rredf2) refers to ffltui.o(.text) for __aeabi_ui2f
+    rredf.o(i.__mathlib_rredf2) refers to fscalb.o(.text) for __ARM_scalbnf
+    rredf.o(i.__mathlib_rredf2) refers to fadd.o(.text) for __aeabi_fadd
+    rredf.o(i.__mathlib_rredf2) refers to fmul.o(.text) for __aeabi_fmul
+    rredf.o(i.__mathlib_rredf2) refers to rredf.o(.constdata) for .constdata
+    rredf.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt.o(i.__softfp_sqrt) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt.o(i.__softfp_sqrt) refers to dsqrt.o(.text) for _dsqrt
+    sqrt.o(i.__softfp_sqrt) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt.o(i.sqrt) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt.o(i.sqrt) refers to dsqrt.o(.text) for _dsqrt
+    sqrt.o(i.sqrt) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers to dsqrt.o(.text) for _dsqrt
+    sqrt_x.o(i.__sqrt$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt_x.o(i.__sqrt$lsc) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    sqrt_x.o(i.__sqrt$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt_x.o(i.__sqrt$lsc) refers to dsqrt.o(.text) for _dsqrt
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_skeaz1284.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_skeaz1284.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
+    uldiv.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    uldiv.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    errno.o(i.__aeabi_errno_addr) refers to errno.o(.data) for .data
+    errno.o(i.__read_errno) refers to errno.o(.data) for .data
+    errno.o(i.__set_errno) refers to errno.o(.data) for .data
+    frnd.o(.text) refers to fepilogue.o(.text) for _float_round
+    depilogue.o(.text) refers to depilogue.o(i.__ARM_clz) for __ARM_clz
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    ffixir.o(.text) refers to fepilogue.o(.text) for _float_round
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+    dsqrt.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dsqrt.o(.text) refers to depilogue.o(.text) for _double_round
+    rredf.o(i.__ARM_common_ll_muluu) refers (Special) to iusefp.o(.text) for __I$use$fp
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing startup_skeaz1284.o(HEAP), (1024 bytes).
+    Removing system_skeaz1284.o(.rev16_text), (4 bytes).
+    Removing system_skeaz1284.o(.revsh_text), (4 bytes).
+    Removing misc.o(.rev16_text), (4 bytes).
+    Removing misc.o(.revsh_text), (4 bytes).
+    Removing misc.o(i.write_vtor), (12 bytes).
+    Removing common.o(.rev16_text), (4 bytes).
+    Removing common.o(.revsh_text), (4 bytes).
+    Removing kea128_adc.o(.rev16_text), (4 bytes).
+    Removing kea128_adc.o(.revsh_text), (4 bytes).
+    Removing kea128_adc.o(i.ad_ave), (44 bytes).
+    Removing kea128_adc.o(i.adc_stop), (12 bytes).
+    Removing kea128_flash.o(.rev16_text), (4 bytes).
+    Removing kea128_flash.o(.revsh_text), (4 bytes).
+    Removing kea128_flash.o(i.FLASH_GetSectorSize), (6 bytes).
+    Removing kea128_ftm.o(.rev16_text), (4 bytes).
+    Removing kea128_ftm.o(.revsh_text), (4 bytes).
+    Removing kea128_ftm.o(i.ftm_pwm_freq), (132 bytes).
+    Removing kea128_gpio.o(.rev16_text), (4 bytes).
+    Removing kea128_gpio.o(.revsh_text), (4 bytes).
+    Removing kea128_irq.o(.rev16_text), (4 bytes).
+    Removing kea128_irq.o(.revsh_text), (4 bytes).
+    Removing kea128_irq.o(i.irq_init), (52 bytes).
+    Removing kea128_kbi.o(.rev16_text), (4 bytes).
+    Removing kea128_kbi.o(.revsh_text), (4 bytes).
+    Removing kea128_kbi.o(i.kbi_init), (248 bytes).
+    Removing kea128_kbi.o(.data), (8 bytes).
+    Removing kea128_pit.o(.rev16_text), (4 bytes).
+    Removing kea128_pit.o(.revsh_text), (4 bytes).
+    Removing kea128_pit.o(i.pit_close), (48 bytes).
+    Removing kea128_pit.o(i.pit_delay), (128 bytes).
+    Removing kea128_pit.o(i.pit_time_get), (88 bytes).
+    Removing kea128_pit.o(i.pit_time_start), (88 bytes).
+    Removing kea128_port.o(.rev16_text), (4 bytes).
+    Removing kea128_port.o(.revsh_text), (4 bytes).
+    Removing kea128_uart.o(.rev16_text), (4 bytes).
+    Removing kea128_uart.o(.revsh_text), (4 bytes).
+    Removing kea128_uart.o(i.NVIC_DisableIRQ), (20 bytes).
+    Removing kea128_uart.o(i.fputc), (18 bytes).
+    Removing kea128_uart.o(i.uart_getchar), (36 bytes).
+    Removing kea128_uart.o(i.uart_putstr), (26 bytes).
+    Removing kea128_uart.o(i.uart_rx_irq_dis), (56 bytes).
+    Removing kea128_uart.o(i.uart_txc_irq_dis), (56 bytes).
+    Removing kea128_uart.o(i.uart_txc_irq_en), (40 bytes).
+    Removing kea128_systick.o(.rev16_text), (4 bytes).
+    Removing kea128_systick.o(.revsh_text), (4 bytes).
+    Removing kea128_systick.o(i.systick_getval), (12 bytes).
+    Removing kea128_systick.o(i.systick_timing), (24 bytes).
+    Removing kea128_i2c.o(.rev16_text), (4 bytes).
+    Removing kea128_i2c.o(.revsh_text), (4 bytes).
+    Removing kea128_i2c.o(i.i2c_Wait), (164 bytes).
+    Removing kea128_i2c.o(i.i2c_delay), (24 bytes).
+    Removing kea128_i2c.o(i.i2c_init), (280 bytes).
+    Removing kea128_i2c.o(i.i2c_read_reg), (188 bytes).
+    Removing kea128_i2c.o(i.i2c_read_reg_bytes), (280 bytes).
+    Removing kea128_i2c.o(i.i2c_write_reg), (104 bytes).
+    Removing kea128_i2c.o(.constdata), (128 bytes).
+    Removing kea128_i2c.o(.data), (12 bytes).
+    Removing kea128_spi.o(.rev16_text), (4 bytes).
+    Removing kea128_spi.o(.revsh_text), (4 bytes).
+    Removing kea128_spi.o(i.spi_init), (308 bytes).
+    Removing kea128_spi.o(i.spi_mosi), (96 bytes).
+    Removing kea128_spi.o(i.spi_mosi_cmd), (44 bytes).
+    Removing kea128_spi.o(.constdata), (36 bytes).
+    Removing kea128_spi.o(.data), (8 bytes).
+    Removing font.o(.rev16_text), (4 bytes).
+    Removing font.o(.revsh_text), (4 bytes).
+    Removing font.o(.constdata), (3040 bytes).
+    Removing seekfree_18tft.o(.rev16_text), (4 bytes).
+    Removing seekfree_18tft.o(.revsh_text), (4 bytes).
+    Removing seekfree_18tft.o(i.LCD_WriteData_16Bit), (54 bytes).
+    Removing seekfree_18tft.o(i.Lcd_SetRegion), (86 bytes).
+    Removing seekfree_18tft.o(i.Lcd_WriteData), (30 bytes).
+    Removing seekfree_18tft.o(i.Lcd_WriteIndex), (30 bytes).
+    Removing seekfree_18tft.o(i.dsp_single_colour), (48 bytes).
+    Removing seekfree_18tft.o(i.lcd_init), (624 bytes).
+    Removing seekfree_18tft.o(i.lcd_showchar), (108 bytes).
+    Removing seekfree_18tft.o(i.lcd_showint16), (172 bytes).
+    Removing seekfree_18tft.o(i.lcd_showint8), (126 bytes).
+    Removing seekfree_18tft.o(i.lcd_showstr), (40 bytes).
+    Removing seekfree_18tft.o(i.lcd_showuint16), (140 bytes).
+    Removing seekfree_18tft.o(i.lcd_showuint8), (92 bytes).
+    Removing seekfree_18tft.o(i.showimage), (112 bytes).
+    Removing seekfree_18tft.o(i.tft_delay), (12 bytes).
+    Removing seekfree_18tft.o(.constdata), (3200 bytes).
+    Removing seekfree_fun.o(.rev16_text), (4 bytes).
+    Removing seekfree_fun.o(.revsh_text), (4 bytes).
+    Removing seekfree_fun.o(i.limit), (58 bytes).
+    Removing seekfree_fun.o(i.limit_ab), (14 bytes).
+    Removing seekfree_fun.o(i.my_delay), (12 bytes).
+    Removing seekfree_fun.o(i.myabs), (14 bytes).
+    Removing seekfree_nrf24l01.o(.rev16_text), (4 bytes).
+    Removing seekfree_nrf24l01.o(.revsh_text), (4 bytes).
+    Removing seekfree_nrf24l01.o(i.NRF_Dev_Init), (200 bytes).
+    Removing seekfree_nrf24l01.o(i.NRF_Rece_Packet), (58 bytes).
+    Removing seekfree_nrf24l01.o(i.NRF_SPI_R_Reg_Burst), (56 bytes).
+    Removing seekfree_nrf24l01.o(i.NRF_SPI_R_Reg_Byte), (38 bytes).
+    Removing seekfree_nrf24l01.o(i.NRF_SPI_WR_Byte), (60 bytes).
+    Removing seekfree_nrf24l01.o(i.NRF_SPI_W_Cmd_Byte), (32 bytes).
+    Removing seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Burst), (54 bytes).
+    Removing seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Byte), (40 bytes).
+    Removing seekfree_nrf24l01.o(i.NRF_Send_Packet), (140 bytes).
+    Removing seekfree_nrf24l01.o(.bss), (64 bytes).
+    Removing seekfree_nrf24l01.o(.data), (5 bytes).
+    Removing seekfree_oled.o(.rev16_text), (4 bytes).
+    Removing seekfree_oled.o(.revsh_text), (4 bytes).
+    Removing seekfree_oled.o(i.OLED_ClrPixel), (74 bytes).
+    Removing seekfree_oled.o(i.OLED_P8x16Str), (140 bytes).
+    Removing seekfree_oled.o(i.OLED_Print_Num), (48 bytes).
+    Removing seekfree_oled.o(i.OLED_PutPixel), (74 bytes).
+    Removing seekfree_oled.o(i.OLED_Wr6Dat), (82 bytes).
+    Removing seekfree_oled.o(i.dis_bmp), (536 bytes).
+    Removing isr.o(.rev16_text), (4 bytes).
+    Removing isr.o(.revsh_text), (4 bytes).
+    Removing isr.o(.bss), (28 bytes).
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing system.o(.rev16_text), (4 bytes).
+    Removing system.o(.revsh_text), (4 bytes).
+    Removing loop.o(.rev16_text), (4 bytes).
+    Removing loop.o(.revsh_text), (4 bytes).
+    Removing loop.o(.bss), (48 bytes).
+    Removing control.o(.rev16_text), (4 bytes).
+    Removing control.o(.revsh_text), (4 bytes).
+    Removing control.o(i.WCZ_Data_Calc), (276 bytes).
+    Removing pid.o(.rev16_text), (4 bytes).
+    Removing pid.o(.revsh_text), (4 bytes).
+    Removing em.o(.rev16_text), (4 bytes).
+    Removing em.o(.revsh_text), (4 bytes).
+    Removing em.o(i.EM_ADC), (552 bytes).
+    Removing em.o(i.Ring_Control), (1432 bytes).
+    Removing em.o(.bss), (50 bytes).
+    Removing search.o(.rev16_text), (4 bytes).
+    Removing search.o(.revsh_text), (4 bytes).
+    Removing filter.o(.rev16_text), (4 bytes).
+    Removing filter.o(.revsh_text), (4 bytes).
+    Removing filter.o(i.Butterworth_Parameter_Init), (168 bytes).
+    Removing filter.o(i.Kalman_Filter), (544 bytes).
+    Removing filter.o(i.LPButterworth), (144 bytes).
+    Removing filter.o(i.Moving_Average), (168 bytes).
+    Removing filter.o(i.fix_inte_filter), (108 bytes).
+    Removing filter.o(i.set_cutoff_frequency), (256 bytes).
+    Removing filter.o(i.set_lpf_alpha), (88 bytes).
+    Removing filter.o(.bss), (376 bytes).
+    Removing filter.o(.data), (72 bytes).
+    Removing mpu6050.o(.rev16_text), (4 bytes).
+    Removing mpu6050.o(.revsh_text), (4 bytes).
+    Removing mpu6050.o(i.Angle_Calculate), (68 bytes).
+    Removing mpu6050.o(i.Data_Filter), (588 bytes).
+    Removing led.o(.rev16_text), (4 bytes).
+    Removing led.o(.revsh_text), (4 bytes).
+    Removing adrc.o(.rev16_text), (4 bytes).
+    Removing adrc.o(.revsh_text), (4 bytes).
+    Removing adrc.o(i.ADRC_Control), (192 bytes).
+    Removing adrc.o(i.ADRC_Integrate_Reset), (6 bytes).
+    Removing adrc.o(i.ADRC_LPF), (116 bytes).
+    Removing adrc.o(i.Constrain_Float), (40 bytes).
+    Removing adrc.o(i.ESO_ADRC), (200 bytes).
+    Removing adrc.o(i.Fal_ADRC), (190 bytes).
+    Removing adrc.o(i.My_ADRC_Control), (84 bytes).
+    Removing adrc.o(i.Nolinear_Conbination_ADRC), (80 bytes).
+    Removing adrc.o(.data), (24 bytes).
+    Removing ano_data_transfer.o(.rev16_text), (4 bytes).
+    Removing ano_data_transfer.o(.revsh_text), (4 bytes).
+    Removing ano_data_transfer.o(i.ANO_DT_Data_Exchange), (760 bytes).
+    Removing ano_data_transfer.o(i.ANO_DT_Send_MotoPWM), (304 bytes).
+    Removing ano_data_transfer.o(i.ANO_DT_Send_PID), (384 bytes).
+    Removing ano_data_transfer.o(i.ANO_DT_Send_Power), (244 bytes).
+    Removing ano_data_transfer.o(i.ANO_DT_Send_RCData), (360 bytes).
+    Removing ano_data_transfer.o(i.ANO_DT_Send_Senser), (408 bytes).
+    Removing ano_data_transfer.o(i.ANO_DT_Send_Senser2), (164 bytes).
+    Removing ano_data_transfer.o(i.ANO_DT_Send_Speed), (232 bytes).
+    Removing ano_data_transfer.o(i.ANO_DT_Send_Status), (316 bytes).
+    Removing ano_data_transfer.o(i.ANO_DT_Send_User), (284 bytes).
+    Removing ano_data_transfer.o(i.ANO_DT_Send_Version), (200 bytes).
+    Removing show.o(.rev16_text), (4 bytes).
+    Removing show.o(.revsh_text), (4 bytes).
+    Removing mymath.o(.rev16_text), (4 bytes).
+    Removing mymath.o(.revsh_text), (4 bytes).
+    Removing mymath.o(i.To_180_degrees), (60 bytes).
+    Removing mymath.o(i.To_180_degrees_db), (80 bytes).
+    Removing mymath.o(i.invSqrt), (72 bytes).
+    Removing mymath.o(i.mx_sin), (264 bytes).
+    Removing mymath.o(i.my_HLP), (424 bytes).
+    Removing mymath.o(i.my_atan), (16 bytes).
+    Removing mymath.o(i.my_cos), (120 bytes).
+    Removing mymath.o(i.my_deadzone), (68 bytes).
+    Removing mymath.o(i.my_deadzone_2), (60 bytes).
+    Removing mymath.o(i.my_sin), (88 bytes).
+    Removing my_i2c.o(.rev16_text), (4 bytes).
+    Removing my_i2c.o(.revsh_text), (4 bytes).
+    Removing my_i2c.o(i.simiic_delay), (16 bytes).
+    Removing my_i2c.o(i.simiic_read_len), (82 bytes).
+    Removing my_i2c.o(i.simiic_write_len), (58 bytes).
+    Removing my_i2c.o(.data), (9 bytes).
+    Removing ffltl.o(.text), (44 bytes).
+    Removing fscalb.o(.text), (24 bytes).
+    Removing frnd.o(.text), (62 bytes).
+    Removing ffixir.o(.text), (76 bytes).
+    Removing fpstat.o(.text), (4 bytes).
+
+200 unused section(s) (total 25032 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      192  startup_skeaz1284.o(RESET)
+    ../clib/../cmprslib/zerorunl2.c          0x00000000   Number         0  __dczerorl2.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  idiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  ldiv.o ABSOLUTE
+    ../clib/microlib/errno.c                 0x00000000   Number         0  errno.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
+    ../fplib/microlib/f2d.c                  0x00000000   Number         0  f2d.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  fadd.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixi.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixir.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixi.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltl.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  fflti.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  fmul.o ABSOLUTE
+    ../fplib/microlib/fprnd.c                0x00000000   Number         0  frnd.o ABSOLUTE
+    ../fplib/microlib/fpscalb.c              0x00000000   Number         0  fscalb.o ABSOLUTE
+    ../fplib/microlib/fpscalb.c              0x00000000   Number         0  dscalb.o ABSOLUTE
+    ../fplib/microlib/fpsqrt.c               0x00000000   Number         0  dsqrt.o ABSOLUTE
+    ../fplib/microlib/fpstat.c               0x00000000   Number         0  fpstat.o ABSOLUTE
+    ../mathlib/asin.c                        0x00000000   Number         0  asin_x.o ABSOLUTE
+    ../mathlib/asin.c                        0x00000000   Number         0  asin.o ABSOLUTE
+    ../mathlib/cosf.c                        0x00000000   Number         0  cosf_x.o ABSOLUTE
+    ../mathlib/cosf.c                        0x00000000   Number         0  cosf.o ABSOLUTE
+    ../mathlib/dunder.c                      0x00000000   Number         0  dunder.o ABSOLUTE
+    ../mathlib/fpclassify.c                  0x00000000   Number         0  fpclassify.o ABSOLUTE
+    ../mathlib/fpclassifyf.c                 0x00000000   Number         0  fpclassifyf.o ABSOLUTE
+    ../mathlib/funder.c                      0x00000000   Number         0  funder.o ABSOLUTE
+    ../mathlib/poly.c                        0x00000000   Number         0  poly.o ABSOLUTE
+    ../mathlib/powf.c                        0x00000000   Number         0  powf.o ABSOLUTE
+    ../mathlib/powf.c                        0x00000000   Number         0  powf_x.o ABSOLUTE
+    ../mathlib/rredf.c                       0x00000000   Number         0  rredf.o ABSOLUTE
+    ../mathlib/sqrt.c                        0x00000000   Number         0  sqrt.o ABSOLUTE
+    ../mathlib/sqrt.c                        0x00000000   Number         0  sqrt_x.o ABSOLUTE
+    ../mathlib/tanf.c                        0x00000000   Number         0  tanf.o ABSOLUTE
+    ../mathlib/tanf.c                        0x00000000   Number         0  tanf_x.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_adc.c  0x00000000   Number         0  kea128_adc.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_flash.c 0x00000000   Number         0  kea128_flash.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_ftm.c  0x00000000   Number         0  kea128_ftm.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_gpio.c 0x00000000   Number         0  kea128_gpio.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_i2c.c  0x00000000   Number         0  kea128_i2c.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_irq.c  0x00000000   Number         0  kea128_irq.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_kbi.c  0x00000000   Number         0  kea128_kbi.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_pit.c  0x00000000   Number         0  kea128_pit.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_port.c 0x00000000   Number         0  kea128_port.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_spi.c  0x00000000   Number         0  kea128_spi.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_systick.c 0x00000000   Number         0  kea128_systick.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_uart.c 0x00000000   Number         0  kea128_uart.o ABSOLUTE
+    ..\..\Libraries\drives\src\common.c      0x00000000   Number         0  common.o ABSOLUTE
+    ..\..\Libraries\drives\src\misc.c        0x00000000   Number         0  misc.o ABSOLUTE
+    ..\..\Libraries\seekfree\SEEKFREE_18TFT.c 0x00000000   Number         0  seekfree_18tft.o ABSOLUTE
+    ..\..\Libraries\seekfree\SEEKFREE_FUN.c  0x00000000   Number         0  seekfree_fun.o ABSOLUTE
+    ..\..\Libraries\seekfree\SEEKFREE_NRF24L01.c 0x00000000   Number         0  seekfree_nrf24l01.o ABSOLUTE
+    ..\..\Libraries\seekfree\SEEKFREE_OLED.c 0x00000000   Number         0  seekfree_oled.o ABSOLUTE
+    ..\..\Libraries\seekfree\font.c          0x00000000   Number         0  font.o ABSOLUTE
+    ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_SKEAZ1284.s 0x00000000   Number         0  startup_skeaz1284.o ABSOLUTE
+    ..\..\Libraries\startup\DeviceSupport\system_SKEAZ1284.c 0x00000000   Number         0  system_skeaz1284.o ABSOLUTE
+    ..\USER\src\isr.c                        0x00000000   Number         0  isr.o ABSOLUTE
+    ..\USER\src\main.c                       0x00000000   Number         0  main.o ABSOLUTE
+    ..\WD151\ADRC.c                          0x00000000   Number         0  adrc.o ABSOLUTE
+    ..\WD151\ANO_Data_Transfer.c             0x00000000   Number         0  ano_data_transfer.o ABSOLUTE
+    ..\WD151\Control.c                       0x00000000   Number         0  control.o ABSOLUTE
+    ..\WD151\EM.c                            0x00000000   Number         0  em.o ABSOLUTE
+    ..\WD151\MPU6050.c                       0x00000000   Number         0  mpu6050.o ABSOLUTE
+    ..\WD151\My_I2C.c                        0x00000000   Number         0  my_i2c.o ABSOLUTE
+    ..\WD151\PID.c                           0x00000000   Number         0  pid.o ABSOLUTE
+    ..\WD151\Search.c                        0x00000000   Number         0  search.o ABSOLUTE
+    ..\WD151\System.c                        0x00000000   Number         0  system.o ABSOLUTE
+    ..\WD151\filter.c                        0x00000000   Number         0  filter.o ABSOLUTE
+    ..\WD151\led.c                           0x00000000   Number         0  led.o ABSOLUTE
+    ..\WD151\loop.c                          0x00000000   Number         0  loop.o ABSOLUTE
+    ..\WD151\mymath.c                        0x00000000   Number         0  mymath.o ABSOLUTE
+    ..\WD151\show.c                          0x00000000   Number         0  show.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_adc.c 0x00000000   Number         0  kea128_adc.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_flash.c 0x00000000   Number         0  kea128_flash.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_ftm.c 0x00000000   Number         0  kea128_ftm.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_gpio.c 0x00000000   Number         0  kea128_gpio.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_i2c.c 0x00000000   Number         0  kea128_i2c.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_irq.c 0x00000000   Number         0  kea128_irq.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_kbi.c 0x00000000   Number         0  kea128_kbi.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_pit.c 0x00000000   Number         0  kea128_pit.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_port.c 0x00000000   Number         0  kea128_port.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_spi.c 0x00000000   Number         0  kea128_spi.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_systick.c 0x00000000   Number         0  kea128_systick.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_uart.c 0x00000000   Number         0  kea128_uart.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\common.c 0x00000000   Number         0  common.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\misc.c   0x00000000   Number         0  misc.o ABSOLUTE
+    ..\\..\\Libraries\\seekfree\\SEEKFREE_18TFT.c 0x00000000   Number         0  seekfree_18tft.o ABSOLUTE
+    ..\\..\\Libraries\\seekfree\\SEEKFREE_FUN.c 0x00000000   Number         0  seekfree_fun.o ABSOLUTE
+    ..\\..\\Libraries\\seekfree\\SEEKFREE_NRF24L01.c 0x00000000   Number         0  seekfree_nrf24l01.o ABSOLUTE
+    ..\\..\\Libraries\\seekfree\\SEEKFREE_OLED.c 0x00000000   Number         0  seekfree_oled.o ABSOLUTE
+    ..\\..\\Libraries\\seekfree\\font.c      0x00000000   Number         0  font.o ABSOLUTE
+    ..\\..\\Libraries\\startup\\DeviceSupport\\system_SKEAZ1284.c 0x00000000   Number         0  system_skeaz1284.o ABSOLUTE
+    ..\\USER\\src\\isr.c                     0x00000000   Number         0  isr.o ABSOLUTE
+    ..\\USER\\src\\main.c                    0x00000000   Number         0  main.o ABSOLUTE
+    ..\\WD151\\ADRC.c                        0x00000000   Number         0  adrc.o ABSOLUTE
+    ..\\WD151\\ANO_Data_Transfer.c           0x00000000   Number         0  ano_data_transfer.o ABSOLUTE
+    ..\\WD151\\Control.c                     0x00000000   Number         0  control.o ABSOLUTE
+    ..\\WD151\\EM.c                          0x00000000   Number         0  em.o ABSOLUTE
+    ..\\WD151\\MPU6050.c                     0x00000000   Number         0  mpu6050.o ABSOLUTE
+    ..\\WD151\\My_I2C.c                      0x00000000   Number         0  my_i2c.o ABSOLUTE
+    ..\\WD151\\PID.c                         0x00000000   Number         0  pid.o ABSOLUTE
+    ..\\WD151\\Search.c                      0x00000000   Number         0  search.o ABSOLUTE
+    ..\\WD151\\System.c                      0x00000000   Number         0  system.o ABSOLUTE
+    ..\\WD151\\filter.c                      0x00000000   Number         0  filter.o ABSOLUTE
+    ..\\WD151\\led.c                         0x00000000   Number         0  led.o ABSOLUTE
+    ..\\WD151\\loop.c                        0x00000000   Number         0  loop.o ABSOLUTE
+    ..\\WD151\\mymath.c                      0x00000000   Number         0  mymath.o ABSOLUTE
+    ..\\WD151\\show.c                        0x00000000   Number         0  show.o ABSOLUTE
+    cdcmple.s                                0x00000000   Number         0  cdcmple.o ABSOLUTE
+    cdrcmple.s                               0x00000000   Number         0  cdrcmple.o ABSOLUTE
+    cfcmple.s                                0x00000000   Number         0  cfcmple.o ABSOLUTE
+    cfrcmple.s                               0x00000000   Number         0  cfrcmple.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    .ARM.Collect$$$$00000000                 0x000000c0   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000000c0   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000000c4   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x000000c8   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x000000c8   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x000000c8   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000D                 0x000000d0   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x000000d0   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x000000d0   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x000000d0   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x000000d4   Section       40  startup_skeaz1284.o(.text)
+    .text                                    0x000000fc   Section        0  uidiv.o(.text)
+    .text                                    0x00000128   Section        0  idiv.o(.text)
+    .text                                    0x00000150   Section        0  ldiv.o(.text)
+    .text                                    0x0000019c   Section        0  memcpya.o(.text)
+    .text                                    0x000001c0   Section        0  memseta.o(.text)
+    .text                                    0x000001e4   Section        0  fadd.o(.text)
+    .text                                    0x00000296   Section        0  fmul.o(.text)
+    .text                                    0x00000310   Section        0  fdiv.o(.text)
+    .text                                    0x0000038c   Section        0  fflti.o(.text)
+    .text                                    0x000003a2   Section        0  ffltui.o(.text)
+    .text                                    0x000003b0   Section        0  dflti.o(.text)
+    .text                                    0x000003d8   Section        0  dfltui.o(.text)
+    .text                                    0x000003f4   Section        0  iusefp.o(.text)
+    i.My_Delay_Us                            0x000003f4   Section        0  my_i2c.o(i.My_Delay_Us)
+    i.__scatterload_null                     0x000003fe   Section        2  handlers.o(i.__scatterload_null)
+    .ARM.__at_0x400                          0x00000400   Section       16  startup_skeaz1284.o(.ARM.__at_0x400)
+    .text                                    0x00000410   Section        0  dadd.o(.text)
+    .text                                    0x00000574   Section        0  dmul.o(.text)
+    .text                                    0x00000644   Section        0  ddiv.o(.text)
+    .text                                    0x00000734   Section        0  ffixi.o(.text)
+    .text                                    0x00000766   Section        0  ffixui.o(.text)
+    .text                                    0x00000790   Section        0  dfixi.o(.text)
+    .text                                    0x000007d8   Section        0  f2d.o(.text)
+    .text                                    0x00000800   Section       40  cdcmple.o(.text)
+    .text                                    0x00000828   Section       40  cdrcmple.o(.text)
+    .text                                    0x00000850   Section        0  d2f.o(.text)
+    .text                                    0x00000888   Section       20  cfcmple.o(.text)
+    .text                                    0x0000089c   Section       20  cfrcmple.o(.text)
+    .text                                    0x000008b0   Section        0  uldiv.o(.text)
+    .text                                    0x00000910   Section        0  llshl.o(.text)
+    .text                                    0x00000930   Section        0  llushr.o(.text)
+    .text                                    0x00000952   Section        0  llsshr.o(.text)
+    .text                                    0x00000978   Section        0  fepilogue.o(.text)
+    .text                                    0x000009fa   Section        0  depilogue.o(.text)
+    .text                                    0x00000ab8   Section        0  dscalb.o(.text)
+    .text                                    0x00000ae4   Section       36  init.o(.text)
+    .text                                    0x00000b08   Section        0  dsqrt.o(.text)
+    .text                                    0x00000baa   Section        0  __dczerorl2.o(.text)
+    i.ADRC_Init                              0x00000c00   Section        0  adrc.o(i.ADRC_Init)
+    i.ANO_DT_Data_Receive_Anl                0x00000d78   Section        0  ano_data_transfer.o(i.ANO_DT_Data_Receive_Anl)
+    i.ANO_DT_Data_Receive_Prepare            0x000011b8   Section        0  ano_data_transfer.o(i.ANO_DT_Data_Receive_Prepare)
+    i.ANO_DT_Send_Check                      0x000012a4   Section        0  ano_data_transfer.o(i.ANO_DT_Send_Check)
+    i.ANO_DT_Send_Data                       0x000012e8   Section        0  ano_data_transfer.o(i.ANO_DT_Send_Data)
+    i.BAT_CHECK                              0x000012fc   Section        0  control.o(i.BAT_CHECK)
+    i.Balance_Init                           0x00001370   Section        0  control.o(i.Balance_Init)
+    i.Check_BottonPress                      0x000013c4   Section        0  show.o(i.Check_BottonPress)
+    i.Data_steepest                          0x000015b8   Section        0  mpu6050.o(i.Data_steepest)
+    i.Duty_100ms                             0x00001710   Section        0  loop.o(i.Duty_100ms)
+    Duty_100ms                               0x00001711   Thumb Code    30  loop.o(i.Duty_100ms)
+    i.Duty_2ms                               0x00001734   Section        0  loop.o(i.Duty_2ms)
+    Duty_2ms                                 0x00001735   Thumb Code    20  loop.o(i.Duty_2ms)
+    i.Duty_40ms                              0x00001750   Section        0  loop.o(i.Duty_40ms)
+    Duty_40ms                                0x00001751   Thumb Code   180  loop.o(i.Duty_40ms)
+    i.Duty_4ms                               0x0000183c   Section        0  loop.o(i.Duty_4ms)
+    Duty_4ms                                 0x0000183d   Thumb Code   294  loop.o(i.Duty_4ms)
+    i.Duty_8ms                               0x000019cc   Section        0  loop.o(i.Duty_8ms)
+    Duty_8ms                                 0x000019cd   Thumb Code   150  loop.o(i.Duty_8ms)
+    i.FLASH_EraseSector                      0x00001aa8   Section        0  kea128_flash.o(i.FLASH_EraseSector)
+    i.FLASH_Init                             0x00001ad8   Section        0  kea128_flash.o(i.FLASH_Init)
+    i.FLASH_WriteSector                      0x00001b24   Section        0  kea128_flash.o(i.FLASH_WriteSector)
+    i.Fhan_ADRC                              0x00001b94   Section        0  adrc.o(i.Fhan_ADRC)
+    i.FlashCmdStart                          0x00001d30   Section        0  kea128_flash.o(i.FlashCmdStart)
+    i.Fsg_ADRC                               0x00001d6c   Section        0  adrc.o(i.Fsg_ADRC)
+    i.GetData                                0x00001da4   Section        0  mpu6050.o(i.GetData)
+    i.I2C_SendACK                            0x00001dca   Section        0  my_i2c.o(i.I2C_SendACK)
+    i.IIC_init                               0x00001e12   Section        0  my_i2c.o(i.IIC_init)
+    i.IIC_start                              0x00001e36   Section        0  my_i2c.o(i.IIC_start)
+    i.IIC_stop                               0x00001e6e   Section        0  my_i2c.o(i.IIC_stop)
+    i.IMU_update                             0x00001ea8   Section        0  mpu6050.o(i.IMU_update)
+    i.IRQ_IRQHandler                         0x00002758   Section        0  isr.o(i.IRQ_IRQHandler)
+    i.KBI0_IRQHandler                        0x0000276c   Section        0  isr.o(i.KBI0_IRQHandler)
+    i.LPF_1                                  0x00002780   Section        0  filter.o(i.LPF_1)
+    i.L_AD_Sample                            0x000027e0   Section        0  em.o(i.L_AD_Sample)
+    i.Loop_Run                               0x00002848   Section        0  loop.o(i.Loop_Run)
+    i.MOTOR_Control                          0x00002894   Section        0  control.o(i.MOTOR_Control)
+    i.MPU6050_GetData                        0x0000292c   Section        0  mpu6050.o(i.MPU6050_GetData)
+    i.MPU6050_Init                           0x000029c0   Section        0  mpu6050.o(i.MPU6050_Init)
+    i.MPU6050_Offset                         0x00002a5c   Section        0  mpu6050.o(i.MPU6050_Offset)
+    i.NVIC_EnableIRQ                         0x00002ba4   Section        0  kea128_uart.o(i.NVIC_EnableIRQ)
+    NVIC_EnableIRQ                           0x00002ba5   Thumb Code    14  kea128_uart.o(i.NVIC_EnableIRQ)
+    i.OLED_DLY_ms                            0x00002bb8   Section        0  seekfree_oled.o(i.OLED_DLY_ms)
+    i.OLED_Draw_UI                           0x00002bd4   Section        0  show.o(i.OLED_Draw_UI)
+    i.OLED_Fill                              0x00003004   Section        0  seekfree_oled.o(i.OLED_Fill)
+    i.OLED_HEXACSII                          0x0000303e   Section        0  seekfree_oled.o(i.OLED_HEXACSII)
+    i.OLED_Init                              0x00003070   Section        0  seekfree_oled.o(i.OLED_Init)
+    i.OLED_P6x8Str                           0x00003170   Section        0  seekfree_oled.o(i.OLED_P6x8Str)
+    i.OLED_Print_Num1                        0x000031d4   Section        0  seekfree_oled.o(i.OLED_Print_Num1)
+    i.OLED_Set_Pos                           0x0000322c   Section        0  seekfree_oled.o(i.OLED_Set_Pos)
+    i.OLED_WrCmd                             0x0000325a   Section        0  seekfree_oled.o(i.OLED_WrCmd)
+    i.OLED_WrDat                             0x000032ac   Section        0  seekfree_oled.o(i.OLED_WrDat)
+    i.PID_Increase                           0x000032fe   Section        0  pid.o(i.PID_Increase)
+    i.PID_Parameter_Init                     0x0000336a   Section        0  pid.o(i.PID_Parameter_Init)
+    i.PID_Realize                            0x00003376   Section        0  pid.o(i.PID_Realize)
+    i.PIT_CH0_IRQHandler                     0x00003414   Section        0  isr.o(i.PIT_CH0_IRQHandler)
+    i.PIT_CH1_IRQHandler                     0x00003428   Section        0  isr.o(i.PIT_CH1_IRQHandler)
+    i.PlacePID_Control                       0x000034c4   Section        0  pid.o(i.PlacePID_Control)
+    i.Ring_Set                               0x0000363c   Section        0  show.o(i.Ring_Set)
+    i.Ring_Stable                            0x00003854   Section        0  em.o(i.Ring_Stable)
+    i.Road_Find                              0x00003f08   Section        0  search.o(i.Road_Find)
+    i.Run_Control                            0x00004100   Section        0  em.o(i.Run_Control)
+    i.SCCB_WaitAck                           0x00004298   Section        0  my_i2c.o(i.SCCB_WaitAck)
+    i.Sign_ADRC                              0x000042dc   Section        0  adrc.o(i.Sign_ADRC)
+    i.Speed_Calculate                        0x00004324   Section        0  control.o(i.Speed_Calculate)
+    i.Speed_Control                          0x000043a8   Section        0  control.o(i.Speed_Control)
+    i.Speed_Measure                          0x0000440c   Section        0  control.o(i.Speed_Measure)
+    i.Start                                  0x0000481c   Section        0  system_skeaz1284.o(i.Start)
+    i.Start_Control                          0x0000487c   Section        0  control.o(i.Start_Control)
+    i.System_Init                            0x000048bc   Section        0  system.o(i.System_Init)
+    i.UART1_IRQHandler                       0x00004d0c   Section        0  isr.o(i.UART1_IRQHandler)
+    i.__ARM_clz                              0x00004d2c   Section        0  depilogue.o(i.__ARM_clz)
+    i.__ARM_common_switch8                   0x00004d5a   Section        0  kea128_ftm.o(i.__ARM_common_switch8)
+    i.__ARM_fpclassify                       0x00004d78   Section        0  fpclassify.o(i.__ARM_fpclassify)
+    i.__kernel_poly                          0x00004da4   Section        0  poly.o(i.__kernel_poly)
+    i.__mathlib_dbl_infnan                   0x00004e50   Section        0  dunder.o(i.__mathlib_dbl_infnan)
+    i.__mathlib_dbl_invalid                  0x00004e5a   Section        0  dunder.o(i.__mathlib_dbl_invalid)
+    i.__mathlib_dbl_underflow                0x00004e6c   Section        0  dunder.o(i.__mathlib_dbl_underflow)
+    i.__scatterload_copy                     0x00004e80   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_zeroinit                 0x00004e8e   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.__set_errno                            0x00004e9c   Section        0  errno.o(i.__set_errno)
+    i.adc_init                               0x00004ea8   Section        0  kea128_adc.o(i.adc_init)
+    i.adc_once                               0x00004ed4   Section        0  kea128_adc.o(i.adc_once)
+    i.asin                                   0x00004f08   Section        0  asin.o(i.asin)
+    i.button_init                            0x0000517c   Section        0  led.o(i.button_init)
+    i.disable_wdog                           0x000051d0   Section        0  system_skeaz1284.o(i.disable_wdog)
+    i.fast_atan2                             0x000051e8   Section        0  mymath.o(i.fast_atan2)
+    i.ftm_count_clean                        0x00005354   Section        0  kea128_ftm.o(i.ftm_count_clean)
+    i.ftm_count_get                          0x00005364   Section        0  kea128_ftm.o(i.ftm_count_get)
+    i.ftm_count_init                         0x00005378   Section        0  kea128_ftm.o(i.ftm_count_init)
+    i.ftm_count_mux                          0x000053b4   Section        0  kea128_ftm.o(i.ftm_count_mux)
+    i.ftm_pwm_duty                           0x00005464   Section        0  kea128_ftm.o(i.ftm_pwm_duty)
+    i.ftm_pwm_init                           0x000054e0   Section        0  kea128_ftm.o(i.ftm_pwm_init)
+    i.ftm_pwm_mux                            0x00005604   Section        0  kea128_ftm.o(i.ftm_pwm_mux)
+    i.get_clk                                0x0000572c   Section        0  common.o(i.get_clk)
+    i.gpio_ddr                               0x000057ec   Section        0  kea128_gpio.o(i.gpio_ddr)
+    i.gpio_get                               0x00005894   Section        0  kea128_gpio.o(i.gpio_get)
+    i.gpio_init                              0x000058c0   Section        0  kea128_gpio.o(i.gpio_init)
+    i.gpio_set                               0x0000599c   Section        0  kea128_gpio.o(i.gpio_set)
+    i.gpio_turn                              0x000059d8   Section        0  kea128_gpio.o(i.gpio_turn)
+    i.led_init                               0x00005a00   Section        0  led.o(i.led_init)
+    i.limit_filter                           0x00005a22   Section        0  filter.o(i.limit_filter)
+    i.main                                   0x00005a80   Section        0  main.o(i.main)
+    i.my_abs                                 0x00005a90   Section        0  mymath.o(i.my_abs)
+    i.my_sqrt                                0x00005aac   Section        0  mymath.o(i.my_sqrt)
+    i.pit_init                               0x00005b28   Section        0  kea128_pit.o(i.pit_init)
+    i.port_pull                              0x00005b80   Section        0  kea128_port.o(i.port_pull)
+    i.range_protect                          0x00005bd0   Section        0  control.o(i.range_protect)
+    i.read_ch                                0x00005be6   Section        0  my_i2c.o(i.read_ch)
+    i.send_ch                                0x00005c44   Section        0  my_i2c.o(i.send_ch)
+    i.simiic_read_reg                        0x00005cac   Section        0  my_i2c.o(i.simiic_read_reg)
+    i.simiic_write_reg                       0x00005cec   Section        0  my_i2c.o(i.simiic_write_reg)
+    i.sqrt                                   0x00005d14   Section        0  sqrt.o(i.sqrt)
+    i.steepest_descend                       0x00005d5c   Section        0  filter.o(i.steepest_descend)
+    i.systick_delay                          0x00005ee8   Section        0  kea128_systick.o(i.systick_delay)
+    i.systick_delay_ms                       0x00005f18   Section        0  kea128_systick.o(i.systick_delay_ms)
+    i.uart_init                              0x00005f34   Section        0  kea128_uart.o(i.uart_init)
+    i.uart_mux                               0x00005fec   Section        0  kea128_uart.o(i.uart_mux)
+    i.uart_putbuff                           0x0000606c   Section        0  kea128_uart.o(i.uart_putbuff)
+    i.uart_putchar                           0x0000608c   Section        0  kea128_uart.o(i.uart_putchar)
+    i.uart_rx_irq_en                         0x000060ac   Section        0  kea128_uart.o(i.uart_rx_irq_en)
+    .constdata                               0x000060d4   Section       22  common.o(.constdata)
+    .constdata                               0x000060ec   Section       12  kea128_ftm.o(.constdata)
+    FTMX                                     0x000060ec   Data          12  kea128_ftm.o(.constdata)
+    .constdata                               0x000060f8   Section       12  kea128_gpio.o(.constdata)
+    GPIOX                                    0x000060f8   Data          12  kea128_gpio.o(.constdata)
+    .constdata                               0x00006104   Section     2072  seekfree_oled.o(.constdata)
+    .constdata                               0x0000691c   Section      256  adrc.o(.constdata)
+    .constdata                               0x00006a20   Section       80  asin.o(.constdata)
+    pS                                       0x00006a20   Data          48  asin.o(.constdata)
+    qS                                       0x00006a50   Data          32  asin.o(.constdata)
+    .data                                    0x1ffff000   Section       16  common.o(.data)
+    .data                                    0x1ffff010   Section       20  kea128_flash.o(.data)
+    .data                                    0x1ffff024   Section        6  kea128_ftm.o(.data)
+    .data                                    0x1ffff02c   Section       12  kea128_uart.o(.data)
+    .data                                    0x1ffff038   Section        6  isr.o(.data)
+    Time                                     0x1ffff03c   Data           2  isr.o(.data)
+    .data                                    0x1ffff03e   Section        1  main.o(.data)
+    .data                                    0x1ffff040   Section       13  system.o(.data)
+    .data                                    0x1ffff050   Section       68  loop.o(.data)
+    sched_tasks                              0x1ffff058   Data          60  loop.o(.data)
+    .data                                    0x1ffff094   Section      176  control.o(.data)
+    wcz_acc                                  0x1ffff130   Data           4  control.o(.data)
+    Speed_Last                               0x1ffff13c   Data           4  control.o(.data)
+    Crazy_Count                              0x1ffff140   Data           4  control.o(.data)
+    .data                                    0x1ffff144   Section      152  pid.o(.data)
+    .data                                    0x1ffff1dc   Section       90  em.o(.data)
+    .data                                    0x1ffff238   Section       15  search.o(.data)
+    .data                                    0x1ffff248   Section      128  mpu6050.o(.data)
+    .data                                    0x1ffff2c8   Section        8  ano_data_transfer.o(.data)
+    _data_len                                0x1ffff2cd   Data           1  ano_data_transfer.o(.data)
+    _data_cnt                                0x1ffff2ce   Data           1  ano_data_transfer.o(.data)
+    state                                    0x1ffff2cf   Data           1  ano_data_transfer.o(.data)
+    .data                                    0x1ffff2d0   Section       14  show.o(.data)
+    .data                                    0x1ffff2e0   Section     1028  mymath.o(.data)
+    .data                                    0x1ffff6e4   Section        4  errno.o(.data)
+    _errno                                   0x1ffff6e4   Data           4  errno.o(.data)
+    .bss                                     0x1ffff6e8   Section      172  control.o(.bss)
+    .bss                                     0x1ffff794   Section      384  pid.o(.bss)
+    .bss                                     0x1ffff914   Section      552  mpu6050.o(.bss)
+    .bss                                     0x1ffffb3c   Section      552  adrc.o(.bss)
+    .bss                                     0x1ffffd64   Section      117  ano_data_transfer.o(.bss)
+    RxBuffer                                 0x1ffffda7   Data          50  ano_data_transfer.o(.bss)
+    STACK                                    0x1ffffde0   Section     2048  startup_skeaz1284.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$IEEEX$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_skeaz1284.o(RESET)
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __Vectors_End                            0x000000c0   Data           0  startup_skeaz1284.o(RESET)
+    __Vectors_Size                           0x000000c0   Number         0  startup_skeaz1284.o ABSOLUTE
+    __main                                   0x000000c1   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000000c1   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000000c5   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000000c9   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x000000c9   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x000000c9   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x000000c9   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x000000d1   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x000000d1   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    init_data_bss                            0x000000d5   Thumb Code     2  startup_skeaz1284.o(.text)
+    Reset_Handler                            0x000000d7   Thumb Code    12  startup_skeaz1284.o(.text)
+    NMI_Handler                              0x000000e3   Thumb Code     2  startup_skeaz1284.o(.text)
+    HardFault_Handler                        0x000000e5   Thumb Code     2  startup_skeaz1284.o(.text)
+    SVC_Handler                              0x000000e7   Thumb Code     2  startup_skeaz1284.o(.text)
+    PendSV_Handler                           0x000000e9   Thumb Code     2  startup_skeaz1284.o(.text)
+    SysTick_Handler                          0x000000eb   Thumb Code     2  startup_skeaz1284.o(.text)
+    ACMP0_IRQHandler                         0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    ACMP1_IRQHandler                         0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    ADC_IRQHandler                           0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    DefaultISR                               0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    FTM0_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    FTM1_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    FTM2_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    FTMRE_IRQHandler                         0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    I2C0_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    I2C1_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    ICS_IRQHandler                           0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    KBI1_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    MSCAN_RX_IRQHandler                      0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    MSCAN_TX_IRQHandler                      0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    PMC_IRQHandler                           0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    PWT_IRQHandler                           0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    RTC_IRQHandler                           0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    Reserved16_IRQHandler                    0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    Reserved17_IRQHandler                    0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    Reserved18_IRQHandler                    0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    Reserved19_IRQHandler                    0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    Reserved20_IRQHandler                    0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    Reserved42_IRQHandler                    0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    SPI0_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    SPI1_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    UART0_IRQHandler                         0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    UART2_IRQHandler                         0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    WDOG_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    __aeabi_uidiv                            0x000000fd   Thumb Code     0  uidiv.o(.text)
+    __aeabi_uidivmod                         0x000000fd   Thumb Code    44  uidiv.o(.text)
+    __aeabi_idiv                             0x00000129   Thumb Code     0  idiv.o(.text)
+    __aeabi_idivmod                          0x00000129   Thumb Code    40  idiv.o(.text)
+    __aeabi_ldivmod                          0x00000151   Thumb Code    76  ldiv.o(.text)
+    __aeabi_memcpy                           0x0000019d   Thumb Code    36  memcpya.o(.text)
+    __aeabi_memcpy4                          0x0000019d   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memcpy8                          0x0000019d   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memset                           0x000001c1   Thumb Code    14  memseta.o(.text)
+    __aeabi_memset4                          0x000001c1   Thumb Code     0  memseta.o(.text)
+    __aeabi_memset8                          0x000001c1   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr                           0x000001cf   Thumb Code     4  memseta.o(.text)
+    __aeabi_memclr4                          0x000001cf   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr8                          0x000001cf   Thumb Code     0  memseta.o(.text)
+    _memset$wrapper                          0x000001d3   Thumb Code    18  memseta.o(.text)
+    __aeabi_fadd                             0x000001e5   Thumb Code   162  fadd.o(.text)
+    __aeabi_fsub                             0x00000287   Thumb Code     8  fadd.o(.text)
+    __aeabi_frsub                            0x0000028f   Thumb Code     8  fadd.o(.text)
+    __aeabi_fmul                             0x00000297   Thumb Code   122  fmul.o(.text)
+    __aeabi_fdiv                             0x00000311   Thumb Code   124  fdiv.o(.text)
+    __aeabi_i2f                              0x0000038d   Thumb Code    22  fflti.o(.text)
+    __aeabi_ui2f                             0x000003a3   Thumb Code    14  ffltui.o(.text)
+    __aeabi_i2d                              0x000003b1   Thumb Code    34  dflti.o(.text)
+    __aeabi_ui2d                             0x000003d9   Thumb Code    24  dfltui.o(.text)
+    My_Delay_Us                              0x000003f5   Thumb Code    10  my_i2c.o(i.My_Delay_Us)
+    __I$use$fp                               0x000003f5   Thumb Code     0  iusefp.o(.text)
+    __scatterload_null                       0x000003ff   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __aeabi_dadd                             0x00000411   Thumb Code   328  dadd.o(.text)
+    __aeabi_dsub                             0x00000559   Thumb Code    12  dadd.o(.text)
+    __aeabi_drsub                            0x00000565   Thumb Code    12  dadd.o(.text)
+    __aeabi_dmul                             0x00000575   Thumb Code   202  dmul.o(.text)
+    __aeabi_ddiv                             0x00000645   Thumb Code   234  ddiv.o(.text)
+    __aeabi_f2iz                             0x00000735   Thumb Code    50  ffixi.o(.text)
+    __aeabi_f2uiz                            0x00000767   Thumb Code    40  ffixui.o(.text)
+    __aeabi_d2iz                             0x00000791   Thumb Code    62  dfixi.o(.text)
+    __aeabi_f2d                              0x000007d9   Thumb Code    40  f2d.o(.text)
+    __aeabi_cdcmpeq                          0x00000801   Thumb Code     0  cdcmple.o(.text)
+    __aeabi_cdcmple                          0x00000801   Thumb Code    38  cdcmple.o(.text)
+    __aeabi_cdrcmple                         0x00000829   Thumb Code    38  cdrcmple.o(.text)
+    __aeabi_d2f                              0x00000851   Thumb Code    56  d2f.o(.text)
+    __aeabi_cfcmpeq                          0x00000889   Thumb Code     0  cfcmple.o(.text)
+    __aeabi_cfcmple                          0x00000889   Thumb Code    20  cfcmple.o(.text)
+    __aeabi_cfrcmple                         0x0000089d   Thumb Code    20  cfrcmple.o(.text)
+    __aeabi_uldivmod                         0x000008b1   Thumb Code    96  uldiv.o(.text)
+    __aeabi_llsl                             0x00000911   Thumb Code    32  llshl.o(.text)
+    _ll_shift_l                              0x00000911   Thumb Code     0  llshl.o(.text)
+    __aeabi_llsr                             0x00000931   Thumb Code    34  llushr.o(.text)
+    _ll_ushift_r                             0x00000931   Thumb Code     0  llushr.o(.text)
+    __aeabi_lasr                             0x00000953   Thumb Code    38  llsshr.o(.text)
+    _ll_sshift_r                             0x00000953   Thumb Code     0  llsshr.o(.text)
+    _float_round                             0x00000979   Thumb Code    16  fepilogue.o(.text)
+    _float_epilogue                          0x00000989   Thumb Code   114  fepilogue.o(.text)
+    _double_round                            0x000009fb   Thumb Code    26  depilogue.o(.text)
+    _double_epilogue                         0x00000a15   Thumb Code   164  depilogue.o(.text)
+    __ARM_scalbn                             0x00000ab9   Thumb Code    44  dscalb.o(.text)
+    scalbn                                   0x00000ab9   Thumb Code     0  dscalb.o(.text)
+    __scatterload                            0x00000ae5   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x00000ae5   Thumb Code     0  init.o(.text)
+    _dsqrt                                   0x00000b09   Thumb Code   162  dsqrt.o(.text)
+    __decompress                             0x00000bab   Thumb Code     0  __dczerorl2.o(.text)
+    __decompress1                            0x00000bab   Thumb Code    86  __dczerorl2.o(.text)
+    ADRC_Init                                0x00000c01   Thumb Code   372  adrc.o(i.ADRC_Init)
+    ANO_DT_Data_Receive_Anl                  0x00000d79   Thumb Code  1024  ano_data_transfer.o(i.ANO_DT_Data_Receive_Anl)
+    ANO_DT_Data_Receive_Prepare              0x000011b9   Thumb Code   220  ano_data_transfer.o(i.ANO_DT_Data_Receive_Prepare)
+    ANO_DT_Send_Check                        0x000012a5   Thumb Code    62  ano_data_transfer.o(i.ANO_DT_Send_Check)
+    ANO_DT_Send_Data                         0x000012e9   Thumb Code    18  ano_data_transfer.o(i.ANO_DT_Send_Data)
+    BAT_CHECK                                0x000012fd   Thumb Code    92  control.o(i.BAT_CHECK)
+    Balance_Init                             0x00001371   Thumb Code    46  control.o(i.Balance_Init)
+    Check_BottonPress                        0x000013c5   Thumb Code   468  show.o(i.Check_BottonPress)
+    Data_steepest                            0x000015b9   Thumb Code   268  mpu6050.o(i.Data_steepest)
+    FLASH_EraseSector                        0x00001aa9   Thumb Code    42  kea128_flash.o(i.FLASH_EraseSector)
+    FLASH_Init                               0x00001ad9   Thumb Code    62  kea128_flash.o(i.FLASH_Init)
+    FLASH_WriteSector                        0x00001b25   Thumb Code   108  kea128_flash.o(i.FLASH_WriteSector)
+    Fhan_ADRC                                0x00001b95   Thumb Code   412  adrc.o(i.Fhan_ADRC)
+    FlashCmdStart                            0x00001d31   Thumb Code    46  kea128_flash.o(i.FlashCmdStart)
+    Fsg_ADRC                                 0x00001d6d   Thumb Code    56  adrc.o(i.Fsg_ADRC)
+    GetData                                  0x00001da5   Thumb Code    38  mpu6050.o(i.GetData)
+    I2C_SendACK                              0x00001dcb   Thumb Code    72  my_i2c.o(i.I2C_SendACK)
+    IIC_init                                 0x00001e13   Thumb Code    36  my_i2c.o(i.IIC_init)
+    IIC_start                                0x00001e37   Thumb Code    56  my_i2c.o(i.IIC_start)
+    IIC_stop                                 0x00001e6f   Thumb Code    56  my_i2c.o(i.IIC_stop)
+    IMU_update                               0x00001ea9   Thumb Code  2218  mpu6050.o(i.IMU_update)
+    IRQ_IRQHandler                           0x00002759   Thumb Code    14  isr.o(i.IRQ_IRQHandler)
+    KBI0_IRQHandler                          0x0000276d   Thumb Code    14  isr.o(i.KBI0_IRQHandler)
+    LPF_1                                    0x00002781   Thumb Code    90  filter.o(i.LPF_1)
+    L_AD_Sample                              0x000027e1   Thumb Code    92  em.o(i.L_AD_Sample)
+    Loop_Run                                 0x00002849   Thumb Code    66  loop.o(i.Loop_Run)
+    MOTOR_Control                            0x00002895   Thumb Code   148  control.o(i.MOTOR_Control)
+    MPU6050_GetData                          0x0000292d   Thumb Code   138  mpu6050.o(i.MPU6050_GetData)
+    MPU6050_Init                             0x000029c1   Thumb Code   156  mpu6050.o(i.MPU6050_Init)
+    MPU6050_Offset                           0x00002a5d   Thumb Code   308  mpu6050.o(i.MPU6050_Offset)
+    OLED_DLY_ms                              0x00002bb9   Thumb Code    28  seekfree_oled.o(i.OLED_DLY_ms)
+    OLED_Draw_UI                             0x00002bd5   Thumb Code   778  show.o(i.OLED_Draw_UI)
+    OLED_Fill                                0x00003005   Thumb Code    58  seekfree_oled.o(i.OLED_Fill)
+    OLED_HEXACSII                            0x0000303f   Thumb Code    50  seekfree_oled.o(i.OLED_HEXACSII)
+    OLED_Init                                0x00003071   Thumb Code   256  seekfree_oled.o(i.OLED_Init)
+    OLED_P6x8Str                             0x00003171   Thumb Code    94  seekfree_oled.o(i.OLED_P6x8Str)
+    OLED_Print_Num1                          0x000031d5   Thumb Code    80  seekfree_oled.o(i.OLED_Print_Num1)
+    OLED_Set_Pos                             0x0000322d   Thumb Code    46  seekfree_oled.o(i.OLED_Set_Pos)
+    OLED_WrCmd                               0x0000325b   Thumb Code    82  seekfree_oled.o(i.OLED_WrCmd)
+    OLED_WrDat                               0x000032ad   Thumb Code    82  seekfree_oled.o(i.OLED_WrDat)
+    PID_Increase                             0x000032ff   Thumb Code   108  pid.o(i.PID_Increase)
+    PID_Parameter_Init                       0x0000336b   Thumb Code    12  pid.o(i.PID_Parameter_Init)
+    PID_Realize                              0x00003377   Thumb Code   158  pid.o(i.PID_Realize)
+    PIT_CH0_IRQHandler                       0x00003415   Thumb Code    14  isr.o(i.PIT_CH0_IRQHandler)
+    PIT_CH1_IRQHandler                       0x00003429   Thumb Code   132  isr.o(i.PIT_CH1_IRQHandler)
+    PlacePID_Control                         0x000034c5   Thumb Code   352  pid.o(i.PlacePID_Control)
+    Ring_Set                                 0x0000363d   Thumb Code   514  show.o(i.Ring_Set)
+    Ring_Stable                              0x00003855   Thumb Code  1642  em.o(i.Ring_Stable)
+    Road_Find                                0x00003f09   Thumb Code   440  search.o(i.Road_Find)
+    Run_Control                              0x00004101   Thumb Code   366  em.o(i.Run_Control)
+    SCCB_WaitAck                             0x00004299   Thumb Code    66  my_i2c.o(i.SCCB_WaitAck)
+    Sign_ADRC                                0x000042dd   Thumb Code    58  adrc.o(i.Sign_ADRC)
+    Speed_Calculate                          0x00004325   Thumb Code   102  control.o(i.Speed_Calculate)
+    Speed_Control                            0x000043a9   Thumb Code    92  control.o(i.Speed_Control)
+    Speed_Measure                            0x0000440d   Thumb Code   940  control.o(i.Speed_Measure)
+    Start                                    0x0000481d   Thumb Code    82  system_skeaz1284.o(i.Start)
+    Start_Control                            0x0000487d   Thumb Code    48  control.o(i.Start_Control)
+    System_Init                              0x000048bd   Thumb Code   938  system.o(i.System_Init)
+    UART1_IRQHandler                         0x00004d0d   Thumb Code    28  isr.o(i.UART1_IRQHandler)
+    __ARM_clz                                0x00004d2d   Thumb Code    46  depilogue.o(i.__ARM_clz)
+    __ARM_common_switch8                     0x00004d5b   Thumb Code    28  kea128_ftm.o(i.__ARM_common_switch8)
+    __ARM_fpclassify                         0x00004d79   Thumb Code    40  fpclassify.o(i.__ARM_fpclassify)
+    __kernel_poly                            0x00004da5   Thumb Code   172  poly.o(i.__kernel_poly)
+    __mathlib_dbl_infnan                     0x00004e51   Thumb Code    10  dunder.o(i.__mathlib_dbl_infnan)
+    __mathlib_dbl_invalid                    0x00004e5b   Thumb Code    16  dunder.o(i.__mathlib_dbl_invalid)
+    __mathlib_dbl_underflow                  0x00004e6d   Thumb Code    14  dunder.o(i.__mathlib_dbl_underflow)
+    __scatterload_copy                       0x00004e81   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_zeroinit                   0x00004e8f   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    __set_errno                              0x00004e9d   Thumb Code     6  errno.o(i.__set_errno)
+    adc_init                                 0x00004ea9   Thumb Code    34  kea128_adc.o(i.adc_init)
+    adc_once                                 0x00004ed5   Thumb Code    46  kea128_adc.o(i.adc_once)
+    asin                                     0x00004f09   Thumb Code   574  asin.o(i.asin)
+    button_init                              0x0000517d   Thumb Code    84  led.o(i.button_init)
+    disable_wdog                             0x000051d1   Thumb Code    16  system_skeaz1284.o(i.disable_wdog)
+    fast_atan2                               0x000051e9   Thumb Code   342  mymath.o(i.fast_atan2)
+    ftm_count_clean                          0x00005355   Thumb Code    12  kea128_ftm.o(i.ftm_count_clean)
+    ftm_count_get                            0x00005365   Thumb Code    14  kea128_ftm.o(i.ftm_count_get)
+    ftm_count_init                           0x00005379   Thumb Code    54  kea128_ftm.o(i.ftm_count_init)
+    ftm_count_mux                            0x000053b5   Thumb Code   166  kea128_ftm.o(i.ftm_count_mux)
+    ftm_pwm_duty                             0x00005465   Thumb Code   114  kea128_ftm.o(i.ftm_pwm_duty)
+    ftm_pwm_init                             0x000054e1   Thumb Code   278  kea128_ftm.o(i.ftm_pwm_init)
+    ftm_pwm_mux                              0x00005605   Thumb Code   290  kea128_ftm.o(i.ftm_pwm_mux)
+    get_clk                                  0x0000572d   Thumb Code   160  common.o(i.get_clk)
+    gpio_ddr                                 0x000057ed   Thumb Code   162  kea128_gpio.o(i.gpio_ddr)
+    gpio_get                                 0x00005895   Thumb Code    40  kea128_gpio.o(i.gpio_get)
+    gpio_init                                0x000058c1   Thumb Code   214  kea128_gpio.o(i.gpio_init)
+    gpio_set                                 0x0000599d   Thumb Code    54  kea128_gpio.o(i.gpio_set)
+    gpio_turn                                0x000059d9   Thumb Code    36  kea128_gpio.o(i.gpio_turn)
+    led_init                                 0x00005a01   Thumb Code    34  led.o(i.led_init)
+    limit_filter                             0x00005a23   Thumb Code    94  filter.o(i.limit_filter)
+    main                                     0x00005a81   Thumb Code    16  main.o(i.main)
+    my_abs                                   0x00005a91   Thumb Code    28  mymath.o(i.my_abs)
+    my_sqrt                                  0x00005aad   Thumb Code   120  mymath.o(i.my_sqrt)
+    pit_init                                 0x00005b29   Thumb Code    76  kea128_pit.o(i.pit_init)
+    port_pull                                0x00005b81   Thumb Code    74  kea128_port.o(i.port_pull)
+    range_protect                            0x00005bd1   Thumb Code    22  control.o(i.range_protect)
+    read_ch                                  0x00005be7   Thumb Code    94  my_i2c.o(i.read_ch)
+    send_ch                                  0x00005c45   Thumb Code   104  my_i2c.o(i.send_ch)
+    simiic_read_reg                          0x00005cad   Thumb Code    64  my_i2c.o(i.simiic_read_reg)
+    simiic_write_reg                         0x00005ced   Thumb Code    38  my_i2c.o(i.simiic_write_reg)
+    sqrt                                     0x00005d15   Thumb Code    66  sqrt.o(i.sqrt)
+    steepest_descend                         0x00005d5d   Thumb Code   394  filter.o(i.steepest_descend)
+    systick_delay                            0x00005ee9   Thumb Code    44  kea128_systick.o(i.systick_delay)
+    systick_delay_ms                         0x00005f19   Thumb Code    24  kea128_systick.o(i.systick_delay_ms)
+    uart_init                                0x00005f35   Thumb Code   170  kea128_uart.o(i.uart_init)
+    uart_mux                                 0x00005fed   Thumb Code   122  kea128_uart.o(i.uart_mux)
+    uart_putbuff                             0x0000606d   Thumb Code    30  kea128_uart.o(i.uart_putbuff)
+    uart_putchar                             0x0000608d   Thumb Code    28  kea128_uart.o(i.uart_putchar)
+    uart_rx_irq_en                           0x000060ad   Thumb Code    36  kea128_uart.o(i.uart_rx_irq_en)
+    F6x8                                     0x00006104   Data         552  seekfree_oled.o(.constdata)
+    F8X16                                    0x0000632c   Data        1520  seekfree_oled.o(.constdata)
+    ADRC_Unit                                0x0000691c   Data         256  adrc.o(.constdata)
+    Region$$Table$$Base                      0x00006a70   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00006a90   Number         0  anon$$obj.o(Region$$Table)
+    ics_clk_khz                              0x1ffff000   Data           4  common.o(.data)
+    ftm_clk_khz                              0x1ffff004   Data           4  common.o(.data)
+    core_clk_khz                             0x1ffff008   Data           4  common.o(.data)
+    bus_clk_khz                              0x1ffff00c   Data           4  common.o(.data)
+    s_flash_command_run                      0x1ffff010   Data          14  kea128_flash.o(.data)
+    s_flash_run_entry                        0x1ffff020   Data           4  kea128_flash.o(.data)
+    period                                   0x1ffff024   Data           6  kea128_ftm.o(.data)
+    uart                                     0x1ffff02c   Data          12  kea128_uart.o(.data)
+    time_sum                                 0x1ffff038   Data           4  isr.o(.data)
+    Mode_Set                                 0x1ffff03e   Data           1  main.o(.data)
+    Send_OK                                  0x1ffff040   Data           1  system.o(.data)
+    System_OK                                0x1ffff041   Data           1  system.o(.data)
+    sector1                                  0x1ffff042   Data           1  system.o(.data)
+    sector2                                  0x1ffff043   Data           1  system.o(.data)
+    sector3                                  0x1ffff044   Data           1  system.o(.data)
+    sector4                                  0x1ffff045   Data           1  system.o(.data)
+    Power                                    0x1ffff048   Data           4  system.o(.data)
+    mark_set                                 0x1ffff04c   Data           1  system.o(.data)
+    sysTickUptime                            0x1ffff050   Data           4  loop.o(.data)
+    time_sum1                                0x1ffff054   Data           4  loop.o(.data)
+    Run_OK                                   0x1ffff094   Data           1  control.o(.data)
+    Run_Flag                                 0x1ffff095   Data           1  control.o(.data)
+    Stop_Flag                                0x1ffff096   Data           1  control.o(.data)
+    Run_Stop                                 0x1ffff097   Data           1  control.o(.data)
+    Auto_Run                                 0x1ffff098   Data           1  control.o(.data)
+    Fast_run                                 0x1ffff099   Data           1  control.o(.data)
+    GYRO                                     0x1ffff09a   Data           6  control.o(.data)
+    GYRO_Offset                              0x1ffff0a0   Data           6  control.o(.data)
+    GYRO_Last                                0x1ffff0a6   Data           6  control.o(.data)
+    ACC                                      0x1ffff0ac   Data           6  control.o(.data)
+    ACC_Offset                               0x1ffff0b2   Data           6  control.o(.data)
+    ACC_Last                                 0x1ffff0b8   Data           6  control.o(.data)
+    Speed_Now                                0x1ffff0c0   Data           4  control.o(.data)
+    Speed_Min                                0x1ffff0c4   Data           4  control.o(.data)
+    Speed_Last                               0x1ffff0c8   Data           4  control.o(.data)
+    Speed_Set                                0x1ffff0cc   Data           4  control.o(.data)
+    Speed_Diff                               0x1ffff0d0   Data           4  control.o(.data)
+    Theory_Duty                              0x1ffff0d4   Data           4  control.o(.data)
+    Vel_Set                                  0x1ffff0d8   Data           4  control.o(.data)
+    Direct_Parameter                         0x1ffff0dc   Data           4  control.o(.data)
+    Direct_Last                              0x1ffff0e0   Data           4  control.o(.data)
+    Radius                                   0x1ffff0e4   Data           4  control.o(.data)
+    Point                                    0x1ffff0e8   Data           1  control.o(.data)
+    Difference                               0x1ffff0ec   Data           4  control.o(.data)
+    Diff_speed                               0x1ffff0f0   Data           2  control.o(.data)
+    Speed_Flag                               0x1ffff0f2   Data           1  control.o(.data)
+    Angle_Flag                               0x1ffff0f3   Data           1  control.o(.data)
+    Ang_Velocity_Flag                        0x1ffff0f4   Data           1  control.o(.data)
+    Left_Crazy                               0x1ffff0f5   Data           1  control.o(.data)
+    Right_Crazy                              0x1ffff0f6   Data           1  control.o(.data)
+    MOTOR_Duty_Left                          0x1ffff0f8   Data           4  control.o(.data)
+    MOTOR_Duty_Right                         0x1ffff0fc   Data           4  control.o(.data)
+    MOTOR_Speed_Left                         0x1ffff100   Data           4  control.o(.data)
+    MOTOR_Speed_Right                        0x1ffff104   Data           4  control.o(.data)
+    MOTOR_Speed_Left_Last                    0x1ffff108   Data           4  control.o(.data)
+    MOTOR_Speed_Right_Last                   0x1ffff10c   Data           4  control.o(.data)
+    MOTOR_Left_Acc                           0x1ffff110   Data           4  control.o(.data)
+    MOTOR_Right_Acc                          0x1ffff114   Data           4  control.o(.data)
+    Distance                                 0x1ffff118   Data           4  control.o(.data)
+    Speed_Limit_Max                          0x1ffff11c   Data           4  control.o(.data)
+    Speed_Limit_Min                          0x1ffff120   Data           4  control.o(.data)
+    temp1                                    0x1ffff124   Data           2  control.o(.data)
+    temp2                                    0x1ffff126   Data           2  control.o(.data)
+    wcz_ref_speed                            0x1ffff128   Data           4  control.o(.data)
+    wcz_acc_deadzone                         0x1ffff12c   Data           4  control.o(.data)
+    battery                                  0x1ffff134   Data           4  control.o(.data)
+    Fres                                     0x1ffff138   Data           1  control.o(.data)
+    Speed                                    0x1ffff144   Data          16  pid.o(.data)
+    Angle                                    0x1ffff154   Data          16  pid.o(.data)
+    Ang_gyro                                 0x1ffff164   Data          20  pid.o(.data)
+    Turn_gyro                                0x1ffff178   Data          20  pid.o(.data)
+    Turn                                     0x1ffff18c   Data          80  pid.o(.data)
+    left_adc_A                               0x1ffff1dc   Data           4  em.o(.data)
+    right_adc_A                              0x1ffff1e0   Data           4  em.o(.data)
+    mid_adc_A                                0x1ffff1e4   Data           4  em.o(.data)
+    LL_adc_A                                 0x1ffff1e8   Data           4  em.o(.data)
+    RR_adc_A                                 0x1ffff1ec   Data           4  em.o(.data)
+    left_adc                                 0x1ffff1f0   Data           4  em.o(.data)
+    right_adc                                0x1ffff1f4   Data           4  em.o(.data)
+    mid_adc                                  0x1ffff1f8   Data           4  em.o(.data)
+    LL_adc                                   0x1ffff1fc   Data           4  em.o(.data)
+    RR_adc                                   0x1ffff200   Data           4  em.o(.data)
+    MM_adc                                   0x1ffff204   Data           4  em.o(.data)
+    Run_state                                0x1ffff208   Data           1  em.o(.data)
+    Dis_Run                                  0x1ffff20c   Data           4  em.o(.data)
+    angle_start                              0x1ffff210   Data           4  em.o(.data)
+    Dis_Ring                                 0x1ffff214   Data           4  em.o(.data)
+    Ring_state                               0x1ffff218   Data           1  em.o(.data)
+    Ring_Flag                                0x1ffff219   Data           1  em.o(.data)
+    Ring                                     0x1ffff21a   Data           6  em.o(.data)
+    Ring_Num                                 0x1ffff220   Data           2  em.o(.data)
+    Ring_Err                                 0x1ffff222   Data           6  em.o(.data)
+    Ring_Dis                                 0x1ffff228   Data           6  em.o(.data)
+    Run_Distance                             0x1ffff22e   Data           6  em.o(.data)
+    Ring_En                                  0x1ffff234   Data           2  em.o(.data)
+    speed_low                                0x1ffff238   Data           1  search.o(.data)
+    speed_mid                                0x1ffff239   Data           1  search.o(.data)
+    speed_high                               0x1ffff23a   Data           1  search.o(.data)
+    speed_higher                             0x1ffff23c   Data           2  search.o(.data)
+    Middle_Err                               0x1ffff240   Data           4  search.o(.data)
+    RoadType                                 0x1ffff244   Data           1  search.o(.data)
+    Dis_Start                                0x1ffff245   Data           1  search.o(.data)
+    Road_state                               0x1ffff246   Data           1  search.o(.data)
+    Offset_OK                                0x1ffff248   Data           1  mpu6050.o(.data)
+    imu_data                                 0x1ffff24c   Data         100  mpu6050.o(.data)
+    err_lf_x                                 0x1ffff2b0   Data           8  mpu6050.o(.data)
+    err_lf_y                                 0x1ffff2b8   Data           8  mpu6050.o(.data)
+    err_lf_z                                 0x1ffff2c0   Data           8  mpu6050.o(.data)
+    save_pid_en                              0x1ffff2c8   Data           2  ano_data_transfer.o(.data)
+    cnt                                      0x1ffff2ca   Data           1  ano_data_transfer.o(.data)
+    yaw_lock                                 0x1ffff2cb   Data           1  ano_data_transfer.o(.data)
+    Send_Check                               0x1ffff2cc   Data           1  ano_data_transfer.o(.data)
+    mark                                     0x1ffff2d0   Data           4  show.o(.data)
+    func                                     0x1ffff2d4   Data           1  show.o(.data)
+    Start_Cnt                                0x1ffff2d8   Data           4  show.o(.data)
+    Page_Index                               0x1ffff2dc   Data           1  show.o(.data)
+    OLED_Refresh                             0x1ffff2dd   Data           1  show.o(.data)
+    fast_atan_table                          0x1ffff2e0   Data        1028  mymath.o(.data)
+    GYRO_Real                                0x1ffff6e8   Data          12  control.o(.bss)
+    ACC_Real                                 0x1ffff6f4   Data          12  control.o(.bss)
+    Attitude_Angle                           0x1ffff700   Data          12  control.o(.bss)
+    Last_Angle                               0x1ffff70c   Data          12  control.o(.bss)
+    Target_Angle                             0x1ffff718   Data          12  control.o(.bss)
+    Tar_Ang_Vel                              0x1ffff724   Data          12  control.o(.bss)
+    Tar_Ang_Vel_Last                         0x1ffff730   Data          12  control.o(.bss)
+    sensor                                   0x1ffff73c   Data          64  control.o(.bss)
+    wcz_spe_fus                              0x1ffff77c   Data          24  control.o(.bss)
+    Speed_PID                                0x1ffff794   Data          64  pid.o(.bss)
+    Angle_PID                                0x1ffff7d4   Data          64  pid.o(.bss)
+    Ang_gyro_PID                             0x1ffff814   Data          64  pid.o(.bss)
+    Turn_gyro_PID                            0x1ffff854   Data          64  pid.o(.bss)
+    Turn_PID                                 0x1ffff894   Data          64  pid.o(.bss)
+    Distance_PID                             0x1ffff8d4   Data          64  pid.o(.bss)
+    ACC_X_BUF                                0x1ffff914   Data          20  mpu6050.o(.bss)
+    ACC_Y_BUF                                0x1ffff928   Data          20  mpu6050.o(.bss)
+    ACC_Z_BUF                                0x1ffff93c   Data          20  mpu6050.o(.bss)
+    GYRO_X_BUF                               0x1ffff950   Data          20  mpu6050.o(.bss)
+    GYRO_Y_BUF                               0x1ffff964   Data          20  mpu6050.o(.bss)
+    GYRO_Z_BUF                               0x1ffff978   Data          20  mpu6050.o(.bss)
+    steepest_ax                              0x1ffff98c   Data          20  mpu6050.o(.bss)
+    steepest_ay                              0x1ffff9a0   Data          20  mpu6050.o(.bss)
+    steepest_az                              0x1ffff9b4   Data          20  mpu6050.o(.bss)
+    steepest_gx                              0x1ffff9c8   Data          20  mpu6050.o(.bss)
+    steepest_gy                              0x1ffff9dc   Data          20  mpu6050.o(.bss)
+    steepest_gz                              0x1ffff9f0   Data          20  mpu6050.o(.bss)
+    steepest_ax_arr                          0x1ffffa04   Data          60  mpu6050.o(.bss)
+    steepest_ay_arr                          0x1ffffa40   Data          60  mpu6050.o(.bss)
+    steepest_az_arr                          0x1ffffa7c   Data          60  mpu6050.o(.bss)
+    steepest_gx_arr                          0x1ffffab8   Data          20  mpu6050.o(.bss)
+    steepest_gy_arr                          0x1ffffacc   Data          20  mpu6050.o(.bss)
+    steepest_gz_arr                          0x1ffffae0   Data          20  mpu6050.o(.bss)
+    vec_err_i                                0x1ffffaf4   Data          12  mpu6050.o(.bss)
+    x_vec                                    0x1ffffb00   Data          12  mpu6050.o(.bss)
+    y_vec                                    0x1ffffb0c   Data          12  mpu6050.o(.bss)
+    z_vec                                    0x1ffffb18   Data          12  mpu6050.o(.bss)
+    a_acc                                    0x1ffffb24   Data          12  mpu6050.o(.bss)
+    w_acc                                    0x1ffffb30   Data          12  mpu6050.o(.bss)
+    ADRC_GYRO_Controller                     0x1ffffb3c   Data         184  adrc.o(.bss)
+    ADRC_SPEED_Controller                    0x1ffffbf4   Data         184  adrc.o(.bss)
+    ADRC_SPEED_MIN_Controller                0x1ffffcac   Data         184  adrc.o(.bss)
+    f                                        0x1ffffd64   Data          17  ano_data_transfer.o(.bss)
+    data_to_send                             0x1ffffd75   Data          50  ano_data_transfer.o(.bss)
+    __initial_sp                             0x200005e0   Data           0  startup_skeaz1284.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000000c1
+
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00007178, Max: 0x00020000, ABSOLUTE, COMPRESSED[0x00006f44])
+
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00006a90, Max: 0x00020000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x000000c0   Data   RO            3    RESET               startup_skeaz1284.o
+    0x000000c0   0x000000c0   0x00000000   Code   RO         2187  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x000000c0   0x000000c0   0x00000004   Code   RO         2289    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x000000c4   0x000000c4   0x00000004   Code   RO         2292    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x000000c8   0x000000c8   0x00000000   Code   RO         2294    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x000000c8   0x000000c8   0x00000000   Code   RO         2296    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x000000c8   0x000000c8   0x00000008   Code   RO         2297    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x000000d0   0x000000d0   0x00000000   Code   RO         2299    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x000000d0   0x000000d0   0x00000000   Code   RO         2301    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x000000d0   0x000000d0   0x00000004   Code   RO         2290    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x000000d4   0x000000d4   0x00000028   Code   RO            5    .text               startup_skeaz1284.o
+    0x000000fc   0x000000fc   0x0000002c   Code   RO         2190    .text               mc_p.l(uidiv.o)
+    0x00000128   0x00000128   0x00000028   Code   RO         2192    .text               mc_p.l(idiv.o)
+    0x00000150   0x00000150   0x0000004c   Code   RO         2194    .text               mc_p.l(ldiv.o)
+    0x0000019c   0x0000019c   0x00000024   Code   RO         2196    .text               mc_p.l(memcpya.o)
+    0x000001c0   0x000001c0   0x00000024   Code   RO         2198    .text               mc_p.l(memseta.o)
+    0x000001e4   0x000001e4   0x000000b2   Code   RO         2202    .text               mf_p.l(fadd.o)
+    0x00000296   0x00000296   0x0000007a   Code   RO         2204    .text               mf_p.l(fmul.o)
+    0x00000310   0x00000310   0x0000007c   Code   RO         2206    .text               mf_p.l(fdiv.o)
+    0x0000038c   0x0000038c   0x00000016   Code   RO         2214    .text               mf_p.l(fflti.o)
+    0x000003a2   0x000003a2   0x0000000e   Code   RO         2216    .text               mf_p.l(ffltui.o)
+    0x000003b0   0x000003b0   0x00000028   Code   RO         2220    .text               mf_p.l(dflti.o)
+    0x000003d8   0x000003d8   0x0000001c   Code   RO         2222    .text               mf_p.l(dfltui.o)
+    0x000003f4   0x000003f4   0x00000000   Code   RO         2318    .text               mc_p.l(iusefp.o)
+    0x000003f4   0x000003f4   0x0000000a   Code   RO         2062    i.My_Delay_Us       my_i2c.o
+    0x000003fe   0x000003fe   0x00000002   Code   RO         2342    i.__scatterload_null  mc_p.l(handlers.o)
+    0x00000400   0x00000400   0x00000010   Code   RO            4    .ARM.__at_0x400     startup_skeaz1284.o
+    0x00000410   0x00000410   0x00000164   Code   RO         2208    .text               mf_p.l(dadd.o)
+    0x00000574   0x00000574   0x000000d0   Code   RO         2210    .text               mf_p.l(dmul.o)
+    0x00000644   0x00000644   0x000000f0   Code   RO         2212    .text               mf_p.l(ddiv.o)
+    0x00000734   0x00000734   0x00000032   Code   RO         2224    .text               mf_p.l(ffixi.o)
+    0x00000766   0x00000766   0x00000028   Code   RO         2226    .text               mf_p.l(ffixui.o)
+    0x0000078e   0x0000078e   0x00000002   PAD
+    0x00000790   0x00000790   0x00000048   Code   RO         2228    .text               mf_p.l(dfixi.o)
+    0x000007d8   0x000007d8   0x00000028   Code   RO         2230    .text               mf_p.l(f2d.o)
+    0x00000800   0x00000800   0x00000028   Code   RO         2232    .text               mf_p.l(cdcmple.o)
+    0x00000828   0x00000828   0x00000028   Code   RO         2234    .text               mf_p.l(cdrcmple.o)
+    0x00000850   0x00000850   0x00000038   Code   RO         2236    .text               mf_p.l(d2f.o)
+    0x00000888   0x00000888   0x00000014   Code   RO         2238    .text               mf_p.l(cfcmple.o)
+    0x0000089c   0x0000089c   0x00000014   Code   RO         2240    .text               mf_p.l(cfrcmple.o)
+    0x000008b0   0x000008b0   0x00000060   Code   RO         2303    .text               mc_p.l(uldiv.o)
+    0x00000910   0x00000910   0x00000020   Code   RO         2305    .text               mc_p.l(llshl.o)
+    0x00000930   0x00000930   0x00000022   Code   RO         2307    .text               mc_p.l(llushr.o)
+    0x00000952   0x00000952   0x00000026   Code   RO         2309    .text               mc_p.l(llsshr.o)
+    0x00000978   0x00000978   0x00000082   Code   RO         2319    .text               mf_p.l(fepilogue.o)
+    0x000009fa   0x000009fa   0x000000be   Code   RO         2325    .text               mf_p.l(depilogue.o)
+    0x00000ab8   0x00000ab8   0x0000002c   Code   RO         2329    .text               mf_p.l(dscalb.o)
+    0x00000ae4   0x00000ae4   0x00000024   Code   RO         2335    .text               mc_p.l(init.o)
+    0x00000b08   0x00000b08   0x000000a2   Code   RO         2337    .text               mf_p.l(dsqrt.o)
+    0x00000baa   0x00000baa   0x00000056   Code   RO         2347    .text               mc_p.l(__dczerorl2.o)
+    0x00000c00   0x00000c00   0x00000178   Code   RO         1712    i.ADRC_Init         adrc.o
+    0x00000d78   0x00000d78   0x00000440   Code   RO         1814    i.ANO_DT_Data_Receive_Anl  ano_data_transfer.o
+    0x000011b8   0x000011b8   0x000000ec   Code   RO         1815    i.ANO_DT_Data_Receive_Prepare  ano_data_transfer.o
+    0x000012a4   0x000012a4   0x00000044   Code   RO         1816    i.ANO_DT_Send_Check  ano_data_transfer.o
+    0x000012e8   0x000012e8   0x00000012   Code   RO         1817    i.ANO_DT_Send_Data  ano_data_transfer.o
+    0x000012fa   0x000012fa   0x00000002   PAD
+    0x000012fc   0x000012fc   0x00000074   Code   RO         1321    i.BAT_CHECK         control.o
+    0x00001370   0x00001370   0x00000054   Code   RO         1322    i.Balance_Init      control.o
+    0x000013c4   0x000013c4   0x000001f4   Code   RO         1925    i.Check_BottonPress  show.o
+    0x000015b8   0x000015b8   0x00000158   Code   RO         1617    i.Data_steepest     mpu6050.o
+    0x00001710   0x00001710   0x00000024   Code   RO         1265    i.Duty_100ms        loop.o
+    0x00001734   0x00001734   0x0000001c   Code   RO         1266    i.Duty_2ms          loop.o
+    0x00001750   0x00001750   0x000000ec   Code   RO         1267    i.Duty_40ms         loop.o
+    0x0000183c   0x0000183c   0x00000190   Code   RO         1268    i.Duty_4ms          loop.o
+    0x000019cc   0x000019cc   0x000000dc   Code   RO         1269    i.Duty_8ms          loop.o
+    0x00001aa8   0x00001aa8   0x00000030   Code   RO          257    i.FLASH_EraseSector  kea128_flash.o
+    0x00001ad8   0x00001ad8   0x0000004c   Code   RO          259    i.FLASH_Init        kea128_flash.o
+    0x00001b24   0x00001b24   0x00000070   Code   RO          260    i.FLASH_WriteSector  kea128_flash.o
+    0x00001b94   0x00001b94   0x0000019c   Code   RO         1718    i.Fhan_ADRC         adrc.o
+    0x00001d30   0x00001d30   0x0000003c   Code   RO          261    i.FlashCmdStart     kea128_flash.o
+    0x00001d6c   0x00001d6c   0x00000038   Code   RO         1719    i.Fsg_ADRC          adrc.o
+    0x00001da4   0x00001da4   0x00000026   Code   RO         1618    i.GetData           mpu6050.o
+    0x00001dca   0x00001dca   0x00000048   Code   RO         2058    i.I2C_SendACK       my_i2c.o
+    0x00001e12   0x00001e12   0x00000024   Code   RO         2059    i.IIC_init          my_i2c.o
+    0x00001e36   0x00001e36   0x00000038   Code   RO         2060    i.IIC_start         my_i2c.o
+    0x00001e6e   0x00001e6e   0x00000038   Code   RO         2061    i.IIC_stop          my_i2c.o
+    0x00001ea6   0x00001ea6   0x00000002   PAD
+    0x00001ea8   0x00001ea8   0x000008b0   Code   RO         1619    i.IMU_update        mpu6050.o
+    0x00002758   0x00002758   0x00000014   Code   RO         1097    i.IRQ_IRQHandler    isr.o
+    0x0000276c   0x0000276c   0x00000014   Code   RO         1098    i.KBI0_IRQHandler   isr.o
+    0x00002780   0x00002780   0x00000060   Code   RO         1540    i.LPF_1             filter.o
+    0x000027e0   0x000027e0   0x00000068   Code   RO         1451    i.L_AD_Sample       em.o
+    0x00002848   0x00002848   0x0000004c   Code   RO         1270    i.Loop_Run          loop.o
+    0x00002894   0x00002894   0x00000098   Code   RO         1323    i.MOTOR_Control     control.o
+    0x0000292c   0x0000292c   0x00000094   Code   RO         1620    i.MPU6050_GetData   mpu6050.o
+    0x000029c0   0x000029c0   0x0000009c   Code   RO         1621    i.MPU6050_Init      mpu6050.o
+    0x00002a5c   0x00002a5c   0x00000148   Code   RO         1622    i.MPU6050_Offset    mpu6050.o
+    0x00002ba4   0x00002ba4   0x00000014   Code   RO          526    i.NVIC_EnableIRQ    kea128_uart.o
+    0x00002bb8   0x00002bb8   0x0000001c   Code   RO          991    i.OLED_DLY_ms       seekfree_oled.o
+    0x00002bd4   0x00002bd4   0x00000430   Code   RO         1926    i.OLED_Draw_UI      show.o
+    0x00003004   0x00003004   0x0000003a   Code   RO          992    i.OLED_Fill         seekfree_oled.o
+    0x0000303e   0x0000303e   0x00000032   Code   RO          993    i.OLED_HEXACSII     seekfree_oled.o
+    0x00003070   0x00003070   0x00000100   Code   RO          994    i.OLED_Init         seekfree_oled.o
+    0x00003170   0x00003170   0x00000064   Code   RO          995    i.OLED_P6x8Str      seekfree_oled.o
+    0x000031d4   0x000031d4   0x00000058   Code   RO          998    i.OLED_Print_Num1   seekfree_oled.o
+    0x0000322c   0x0000322c   0x0000002e   Code   RO         1000    i.OLED_Set_Pos      seekfree_oled.o
+    0x0000325a   0x0000325a   0x00000052   Code   RO         1002    i.OLED_WrCmd        seekfree_oled.o
+    0x000032ac   0x000032ac   0x00000052   Code   RO         1003    i.OLED_WrDat        seekfree_oled.o
+    0x000032fe   0x000032fe   0x0000006c   Code   RO         1405    i.PID_Increase      pid.o
+    0x0000336a   0x0000336a   0x0000000c   Code   RO         1406    i.PID_Parameter_Init  pid.o
+    0x00003376   0x00003376   0x0000009e   Code   RO         1407    i.PID_Realize       pid.o
+    0x00003414   0x00003414   0x00000014   Code   RO         1099    i.PIT_CH0_IRQHandler  isr.o
+    0x00003428   0x00003428   0x0000009c   Code   RO         1100    i.PIT_CH1_IRQHandler  isr.o
+    0x000034c4   0x000034c4   0x00000178   Code   RO         1408    i.PlacePID_Control  pid.o
+    0x0000363c   0x0000363c   0x00000218   Code   RO         1927    i.Ring_Set          show.o
+    0x00003854   0x00003854   0x000006b4   Code   RO         1453    i.Ring_Stable       em.o
+    0x00003f08   0x00003f08   0x000001f8   Code   RO         1510    i.Road_Find         search.o
+    0x00004100   0x00004100   0x00000198   Code   RO         1454    i.Run_Control       em.o
+    0x00004298   0x00004298   0x00000042   Code   RO         2063    i.SCCB_WaitAck      my_i2c.o
+    0x000042da   0x000042da   0x00000002   PAD
+    0x000042dc   0x000042dc   0x00000048   Code   RO         1722    i.Sign_ADRC         adrc.o
+    0x00004324   0x00004324   0x00000084   Code   RO         1324    i.Speed_Calculate   control.o
+    0x000043a8   0x000043a8   0x00000064   Code   RO         1325    i.Speed_Control     control.o
+    0x0000440c   0x0000440c   0x00000410   Code   RO         1326    i.Speed_Measure     control.o
+    0x0000481c   0x0000481c   0x00000060   Code   RO           15    i.Start             system_skeaz1284.o
+    0x0000487c   0x0000487c   0x00000040   Code   RO         1327    i.Start_Control     control.o
+    0x000048bc   0x000048bc   0x00000450   Code   RO         1220    i.System_Init       system.o
+    0x00004d0c   0x00004d0c   0x00000020   Code   RO         1101    i.UART1_IRQHandler  isr.o
+    0x00004d2c   0x00004d2c   0x0000002e   Code   RO         2327    i.__ARM_clz         mf_p.l(depilogue.o)
+    0x00004d5a   0x00004d5a   0x0000001c   Code   RO          365    i.__ARM_common_switch8  kea128_ftm.o
+    0x00004d76   0x00004d76   0x00000002   PAD
+    0x00004d78   0x00004d78   0x0000002c   Code   RO         2256    i.__ARM_fpclassify  m_ps.l(fpclassify.o)
+    0x00004da4   0x00004da4   0x000000ac   Code   RO         2274    i.__kernel_poly     m_ps.l(poly.o)
+    0x00004e50   0x00004e50   0x0000000a   Code   RO         2243    i.__mathlib_dbl_infnan  m_ps.l(dunder.o)
+    0x00004e5a   0x00004e5a   0x00000010   Code   RO         2245    i.__mathlib_dbl_invalid  m_ps.l(dunder.o)
+    0x00004e6a   0x00004e6a   0x00000002   PAD
+    0x00004e6c   0x00004e6c   0x00000014   Code   RO         2248    i.__mathlib_dbl_underflow  m_ps.l(dunder.o)
+    0x00004e80   0x00004e80   0x0000000e   Code   RO         2341    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x00004e8e   0x00004e8e   0x0000000e   Code   RO         2343    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x00004e9c   0x00004e9c   0x0000000c   Code   RO         2313    i.__set_errno       mc_p.l(errno.o)
+    0x00004ea8   0x00004ea8   0x0000002c   Code   RO          220    i.adc_init          kea128_adc.o
+    0x00004ed4   0x00004ed4   0x00000034   Code   RO          221    i.adc_once          kea128_adc.o
+    0x00004f08   0x00004f08   0x00000274   Code   RO         2152    i.asin              m_ps.l(asin.o)
+    0x0000517c   0x0000517c   0x00000054   Code   RO         1685    i.button_init       led.o
+    0x000051d0   0x000051d0   0x00000018   Code   RO           16    i.disable_wdog      system_skeaz1284.o
+    0x000051e8   0x000051e8   0x0000016c   Code   RO         1965    i.fast_atan2        mymath.o
+    0x00005354   0x00005354   0x00000010   Code   RO          304    i.ftm_count_clean   kea128_ftm.o
+    0x00005364   0x00005364   0x00000014   Code   RO          305    i.ftm_count_get     kea128_ftm.o
+    0x00005378   0x00005378   0x0000003c   Code   RO          306    i.ftm_count_init    kea128_ftm.o
+    0x000053b4   0x000053b4   0x000000b0   Code   RO          307    i.ftm_count_mux     kea128_ftm.o
+    0x00005464   0x00005464   0x0000007c   Code   RO          308    i.ftm_pwm_duty      kea128_ftm.o
+    0x000054e0   0x000054e0   0x00000124   Code   RO          310    i.ftm_pwm_init      kea128_ftm.o
+    0x00005604   0x00005604   0x00000128   Code   RO          311    i.ftm_pwm_mux       kea128_ftm.o
+    0x0000572c   0x0000572c   0x000000c0   Code   RO          169    i.get_clk           common.o
+    0x000057ec   0x000057ec   0x000000a8   Code   RO          372    i.gpio_ddr          kea128_gpio.o
+    0x00005894   0x00005894   0x0000002c   Code   RO          373    i.gpio_get          kea128_gpio.o
+    0x000058c0   0x000058c0   0x000000dc   Code   RO          374    i.gpio_init         kea128_gpio.o
+    0x0000599c   0x0000599c   0x0000003c   Code   RO          375    i.gpio_set          kea128_gpio.o
+    0x000059d8   0x000059d8   0x00000028   Code   RO          376    i.gpio_turn         kea128_gpio.o
+    0x00005a00   0x00005a00   0x00000022   Code   RO         1686    i.led_init          led.o
+    0x00005a22   0x00005a22   0x0000005e   Code   RO         1543    i.limit_filter      filter.o
+    0x00005a80   0x00005a80   0x00000010   Code   RO         1175    i.main              main.o
+    0x00005a90   0x00005a90   0x0000001c   Code   RO         1969    i.my_abs            mymath.o
+    0x00005aac   0x00005aac   0x0000007c   Code   RO         1975    i.my_sqrt           mymath.o
+    0x00005b28   0x00005b28   0x00000058   Code   RO          463    i.pit_init          kea128_pit.o
+    0x00005b80   0x00005b80   0x00000050   Code   RO          505    i.port_pull         kea128_port.o
+    0x00005bd0   0x00005bd0   0x00000016   Code   RO         1329    i.range_protect     control.o
+    0x00005be6   0x00005be6   0x0000005e   Code   RO         2064    i.read_ch           my_i2c.o
+    0x00005c44   0x00005c44   0x00000068   Code   RO         2065    i.send_ch           my_i2c.o
+    0x00005cac   0x00005cac   0x00000040   Code   RO         2068    i.simiic_read_reg   my_i2c.o
+    0x00005cec   0x00005cec   0x00000026   Code   RO         2070    i.simiic_write_reg  my_i2c.o
+    0x00005d12   0x00005d12   0x00000002   PAD
+    0x00005d14   0x00005d14   0x00000048   Code   RO         2282    i.sqrt              m_ps.l(sqrt.o)
+    0x00005d5c   0x00005d5c   0x0000018a   Code   RO         1546    i.steepest_descend  filter.o
+    0x00005ee6   0x00005ee6   0x00000002   PAD
+    0x00005ee8   0x00005ee8   0x00000030   Code   RO          621    i.systick_delay     kea128_systick.o
+    0x00005f18   0x00005f18   0x0000001c   Code   RO          622    i.systick_delay_ms  kea128_systick.o
+    0x00005f34   0x00005f34   0x000000b8   Code   RO          529    i.uart_init         kea128_uart.o
+    0x00005fec   0x00005fec   0x00000080   Code   RO          530    i.uart_mux          kea128_uart.o
+    0x0000606c   0x0000606c   0x0000001e   Code   RO          531    i.uart_putbuff      kea128_uart.o
+    0x0000608a   0x0000608a   0x00000002   PAD
+    0x0000608c   0x0000608c   0x00000020   Code   RO          532    i.uart_putchar      kea128_uart.o
+    0x000060ac   0x000060ac   0x00000028   Code   RO          535    i.uart_rx_irq_en    kea128_uart.o
+    0x000060d4   0x000060d4   0x00000016   Data   RO          170    .constdata          common.o
+    0x000060ea   0x000060ea   0x00000002   PAD
+    0x000060ec   0x000060ec   0x0000000c   Data   RO          312    .constdata          kea128_ftm.o
+    0x000060f8   0x000060f8   0x0000000c   Data   RO          377    .constdata          kea128_gpio.o
+    0x00006104   0x00006104   0x00000818   Data   RO         1005    .constdata          seekfree_oled.o
+    0x0000691c   0x0000691c   0x00000100   Data   RO         1724    .constdata          adrc.o
+    0x00006a1c   0x00006a1c   0x00000004   PAD
+    0x00006a20   0x00006a20   0x00000050   Data   RO         2153    .constdata          m_ps.l(asin.o)
+    0x00006a70   0x00006a70   0x00000020   Data   RO         2339    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x1ffff000, Load base: 0x00006a90, Size: 0x000015e0, Max: 0x00004000, ABSOLUTE, COMPRESSED[0x000004b4])
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x1ffff000   COMPRESSED   0x00000010   Data   RW          171    .data               common.o
+    0x1ffff010   COMPRESSED   0x00000014   Data   RW          262    .data               kea128_flash.o
+    0x1ffff024   COMPRESSED   0x00000006   Data   RW          313    .data               kea128_ftm.o
+    0x1ffff02a   COMPRESSED   0x00000002   PAD
+    0x1ffff02c   COMPRESSED   0x0000000c   Data   RW          538    .data               kea128_uart.o
+    0x1ffff038   COMPRESSED   0x00000006   Data   RW         1103    .data               isr.o
+    0x1ffff03e   COMPRESSED   0x00000001   Data   RW         1176    .data               main.o
+    0x1ffff03f   COMPRESSED   0x00000001   PAD
+    0x1ffff040   COMPRESSED   0x0000000d   Data   RW         1221    .data               system.o
+    0x1ffff04d   COMPRESSED   0x00000003   PAD
+    0x1ffff050   COMPRESSED   0x00000044   Data   RW         1272    .data               loop.o
+    0x1ffff094   COMPRESSED   0x000000b0   Data   RW         1331    .data               control.o
+    0x1ffff144   COMPRESSED   0x00000098   Data   RW         1410    .data               pid.o
+    0x1ffff1dc   COMPRESSED   0x0000005a   Data   RW         1456    .data               em.o
+    0x1ffff236   COMPRESSED   0x00000002   PAD
+    0x1ffff238   COMPRESSED   0x0000000f   Data   RW         1511    .data               search.o
+    0x1ffff247   COMPRESSED   0x00000001   PAD
+    0x1ffff248   COMPRESSED   0x00000080   Data   RW         1624    .data               mpu6050.o
+    0x1ffff2c8   COMPRESSED   0x00000008   Data   RW         1829    .data               ano_data_transfer.o
+    0x1ffff2d0   COMPRESSED   0x0000000e   Data   RW         1928    .data               show.o
+    0x1ffff2de   COMPRESSED   0x00000002   PAD
+    0x1ffff2e0   COMPRESSED   0x00000404   Data   RW         1976    .data               mymath.o
+    0x1ffff6e4   COMPRESSED   0x00000004   Data   RW         2314    .data               mc_p.l(errno.o)
+    0x1ffff6e8        -       0x000000ac   Zero   RW         1330    .bss                control.o
+    0x1ffff794        -       0x00000180   Zero   RW         1409    .bss                pid.o
+    0x1ffff914        -       0x00000228   Zero   RW         1623    .bss                mpu6050.o
+    0x1ffffb3c        -       0x00000228   Zero   RW         1723    .bss                adrc.o
+    0x1ffffd64        -       0x00000075   Zero   RW         1828    .bss                ano_data_transfer.o
+    0x1ffffdd9   COMPRESSED   0x00000007   PAD
+    0x1ffffde0        -       0x00000800   Zero   RW            1    STACK               startup_skeaz1284.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       916         18        256          0        552       4207   adrc.o
+      1410         86          0          8        117       4578   ano_data_transfer.o
+       192         32         22         16          0       2157   common.o
+      1710        230          0        176        172      10196   control.o
+      2228        222          0         90          0       3984   em.o
+       584          6          0          0          0       2978   filter.o
+       248         46          0          6          0       5927   isr.o
+        96         16          0          0          0       1014   kea128_adc.o
+       296         38          0         20          0       3489   kea128_flash.o
+      1012         64         12          6          0       5072   kea128_ftm.o
+       532         26         12          0          0       3605   kea128_gpio.o
+        88         12          0          0          0        535   kea128_pit.o
+        80          6          0          0          0        548   kea128_port.o
+        76          8          0          0          0       1027   kea128_systick.o
+       434         34          0         12          0       9637   kea128_uart.o
+       118          0          0          0          0        837   led.o
+       996        256          0         68          0       3729   loop.o
+        16          0          0          1          0        618   main.o
+         0          0          0          0          0       4543   misc.o
+      3238        152          0        128        552       8713   mpu6050.o
+       596          0          0          0          0       5074   my_i2c.o
+       516         26          0       1028          0       2682   mymath.o
+       654         24          0        152        384       4052   pid.o
+       504         64          0         15          0       1091   search.o
+       790         14       2072          0          0       6369   seekfree_oled.o
+      2108        348          0         14          0       2528   show.o
+        56         30        192          0       2048        976   startup_skeaz1284.o
+      1104        166          0         13          0       7181   system.o
+       120         22          0          0          0     108611   system_skeaz1284.o
+
+    ----------------------------------------------------------------------
+     20732       1946       2604       1764       3832     215958   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+        14          0          6         11          7          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+       628         54         80          0          0        104   asin.o
+        46          6          0          0          0        204   dunder.o
+        44          4          0          0          0         60   fpclassify.o
+       172          0          0          0          0         76   poly.o
+        72          6          0          0          0         76   sqrt.o
+        86          0          0          0          0          0   __dczerorl2.o
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        12          6          0          4          0         60   errno.o
+        30          0          0          0          0          0   handlers.o
+        40          0          0          0          0         72   idiv.o
+        36          8          0          0          0         68   init.o
+         0          0          0          0          0          0   iusefp.o
+        76          0          0          0          0         76   ldiv.o
+        32          0          0          0          0         68   llshl.o
+        38          0          0          0          0         68   llsshr.o
+        34          0          0          0          0         68   llushr.o
+        36          0          0          0          0         60   memcpya.o
+        36          0          0          0          0        100   memseta.o
+        44          0          0          0          0         72   uidiv.o
+        96          0          0          0          0         84   uldiv.o
+        40          2          0          0          0         68   cdcmple.o
+        40          2          0          0          0         68   cdrcmple.o
+        20          0          0          0          0         68   cfcmple.o
+        20          0          0          0          0         68   cfrcmple.o
+        56          0          0          0          0         68   d2f.o
+       356          4          0          0          0        140   dadd.o
+       240          6          0          0          0         84   ddiv.o
+       236          0          0          0          0        216   depilogue.o
+        72         10          0          0          0         72   dfixi.o
+        40          6          0          0          0         68   dflti.o
+        28          4          0          0          0         68   dfltui.o
+       208          6          0          0          0         88   dmul.o
+        44          0          0          0          0         72   dscalb.o
+       162          0          0          0          0         80   dsqrt.o
+        40          0          0          0          0         60   f2d.o
+       178          0          0          0          0        108   fadd.o
+       124          0          0          0          0         72   fdiv.o
+       130          0          0          0          0        144   fepilogue.o
+        50          0          0          0          0         60   ffixi.o
+        40          0          0          0          0         60   ffixui.o
+        22          0          0          0          0         68   fflti.o
+        14          0          0          0          0         68   ffltui.o
+       122          0          0          0          0         72   fmul.o
+
+    ----------------------------------------------------------------------
+      3864        132         80          4          0       3256   Library Totals
+         4          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       962         70         80          0          0        520   m_ps.l
+       616         22          0          4          0        796   mc_p.l
+      2282         40          0          0          0       1940   mf_p.l
+
+    ----------------------------------------------------------------------
+      3864        132         80          4          0       3256   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     24596       2078       2684       1768       3832     213246   Grand Totals
+     24596       2078       2684       1204       3832     213246   ELF Image Totals (compressed)
+     24596       2078       2684       1204          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                27280 (  26.64kB)
+    Total RW  Size (RW Data + ZI Data)              5600 (   5.47kB)
+    Total ROM Size (Code + RO Data + RW Data)      28484 (  27.82kB)
+
+==============================================================================
+
